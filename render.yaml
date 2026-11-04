@@ -12,9 +12,7 @@ services:
     autoDeployTrigger: "off"
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: relay-ticket-db
-          property: connectionString
+        sync: false
       - key: REDIS_URL
         fromService:
           name: relay-ticket-queue
@@ -38,11 +36,3 @@ services:
     region: oregon
     ipAllowList: []
     maxmemoryPolicy: noeviction
-
-databases:
-  - name: relay-ticket-db
-    plan: free
-    region: oregon
-    databaseName: relay
-    user: relay
-    ipAllowList: []

@@ -5,15 +5,15 @@
   "runtime_memory_limit_mb": 512,
   "backend_local_tests": 39,
   "public_browser": "synthetic-only example selection, actual asynchronous inference and persisted review; free text and notes disabled",
-  "hosting_status": "awaiting Render account connection; no hosting resources created",
+  "hosting_status": "awaiting Render and Neon account authorization; no hosting resources created",
   "requested_plans": [
-    "free web",
-    "free Postgres",
-    "free Key Value"
+    "Render free web",
+    "Render free Key Value",
+    "Neon Free PostgreSQL"
   ],
   "known_limits": [
-    "idle sleep",
-    "30-day Postgres expiration",
+    "idle sleep/cold start",
+    "Neon free compute/storage quotas",
     "in-memory Redis",
     "shared synthetic sandbox capped at500 tickets"
   ]

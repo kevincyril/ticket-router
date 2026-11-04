@@ -5,7 +5,7 @@ The repository contains `render.yaml` and an immutable trained-model bundle for 
 ## Concrete deployment
 
 - Web: `relay-ticket-demo`, Docker, `plan: free`, Oregon. Runs `python -m app.hosted` on Render's supplied PORT.
-- Database: `relay-ticket-db`, managed PostgreSQL, `plan: free`, same region. No external database access.
+- Database: external Neon PostgreSQL Free (no time limit), connected over TLS through the secret DATABASE_URL.
 - Queue: `relay-ticket-queue`, Redis-compatible Key Value, `plan: free`, same region. No external queue access; eviction disabled.
 - One web instance supervises the API, dispatcher, and real Linux RQ worker. Dedicated background workers are not part of this free plan. Any child exit recycles the instance. Migrations run at startup before workers/API.
 - `AUTO_ROUTING_ENABLED=false`, `DEMO_MODE=true`, 500-ticket maximum, single-thread numerical libraries. All submissions use supplied synthetic examples. Review notes are disabled and reviewer is fixed to Demo visitor. This is an intentionally shared public sandbox; local mode still supports custom ticket text.
@@ -14,9 +14,9 @@ The trained word/character classifier and its support matrix are packaged as `de
 
 ## Launch
 
-Connect Render to this session, choose the intended workspace, and grant Render access to the private `kevincyril/ticket-router` GitHub repository. Apply `render.yaml` as a Blueprint. Check **every service remains Free**, no existing unrelated resource is being updated, and no payment method or plan upgrade is requested. Stop rather than accepting a paid substitution if a free instance quota is unavailable.
+Connect Render to this session, choose the intended workspace, and grant Render access to the private `kevincyril/ticket-router` GitHub repository. Create a Neon project on the Free plan, select a region near Oregon, and copy its PostgreSQL connection string with sslmode=require into Render's DATABASE_URL secret prompt. Keep that value out of Git and chat. Apply `render.yaml` as a Blueprint. Check **every service remains Free**, no existing unrelated resource is being updated, and no payment method or plan upgrade is requested. Stop rather than accepting a paid substitution if a free instance quota is unavailable.
 
-The Blueprint uses generated internal datastore connection strings; no credentials are committed. Auto-deployment is off, so pushes do not trigger repeated hosting builds. There is no automatic paid upgrade. If the account already has billing configured, inspect its usage/spend settings because Render documents separate bandwidth/build usage allowances. This task does not authorize paid usage or billing changes.
+The Blueprint references the internal Redis connection string and prompts for the external Neon DATABASE_URL secret; no credentials are committed. It does not provision a Render database. Auto-deployment is off, so pushes do not trigger repeated hosting builds. There is no automatic paid upgrade. If the account already has billing configured, inspect its usage/spend settings because Render documents separate bandwidth/build usage allowances. This task does not authorize paid usage or billing changes.
 
 After Render reports a live deployment, verify its returned URL, `/api/health/ready` and `/api/model`, then run:
 
@@ -28,11 +28,13 @@ The smoke check uses the real queue, Linux worker and PostgreSQL, verifies model
 
 ## Free-tier limitations
 
-Render's free web service sleeps after15 minutes without inbound traffic and normally takes about a minute to wake. The free PostgreSQL database expires30 days after creation and does not have managed backups. Free Key Value is in-memory and loses queued data on restart; the database-backed dispatcher can redeliver unfinished tickets after leases expire. Free resources can restart and have usage limits. These constraints make this a portfolio preview, not durable production hosting.
+Render's free web service sleeps after15 minutes without inbound traffic and normally takes about a minute to wake. Neon Free currently has no time limit, with1GB storage and100 CU-hours monthly per project; it can suspend compute when inactive. This avoids Render Free Postgres's30-day expiry. Free Key Value is in-memory and loses queued data on restart; the database-backed dispatcher can redeliver unfinished tickets after leases expire. Free resources can restart and have usage limits. These constraints make this a portfolio preview, not durable production hosting.
 
 The ticket cap bounds application storage. At the cap, existing results/evaluation remain visible but new unique submissions return429. Idempotent replay still works. There is no automatic deletion of user or local database contents. A new demo cycle requires an explicit operator decision. Do not put real customer information here.
 
-Official references: [free services and limits](https://render.com/docs/free), [Blueprint fields](https://render.com/docs/blueprint-spec).
+Recruiters receive a public HTTPS onrender.com link and do not need Render, Neon or GitHub accounts. The source repository can remain private. Your own provider account authorization is required to launch.
+
+Official references: [Neon free pricing](https://neon.com/pricing), [free services and limits](https://render.com/docs/free), [Blueprint fields](https://render.com/docs/blueprint-spec).
 
 ## Verification and updates
 
