@@ -41,6 +41,12 @@ jobs:
         run: |
           docker run --detach --name relay-smoke --network host --memory 512m -e DATABASE_URL -e REDIS_URL -e DEMO_MODE -e AUTO_ROUTING_ENABLED -e PORT=8000 relay:ci python -m app.hosted
           uv run python scripts/smoke_hosted.py
+      - name: Install browser for hosted editor regression
+        run: uv run playwright install --with-deps chromium
+      - name: Verify custom request typing, editing and submission
+        env:
+          PUBLIC_BROWSER_BASE_URL: http://127.0.0.1:8000
+        run: uv run python -m pytest tests/test_browser_public.py -q
       - name: Hosted runtime logs
         if: always()
         run: docker logs relay-smoke 2>&1 || true

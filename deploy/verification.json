@@ -4,7 +4,7 @@
   "result": "success",
   "runtime_memory_limit_mb": 512,
   "backend_local_tests": 39,
-  "public_browser": "synthetic-only example selection, actual asynchronous inference and persisted review; free text and notes disabled",
+  "public_browser": "Editable custom request: keyboard replacement, edits, newline, polling persistence, exact POST and saved text, real inference/review; review notes remain disabled",
   "hosting_status": "awaiting Render and Neon account authorization; no hosting resources created",
   "requested_plans": [
     "Render free web",
@@ -16,5 +16,7 @@
     "Neon free compute/storage quotas",
     "in-memory Redis",
     "shared synthetic sandbox capped at500 tickets"
-  ]
+  ],
+  "editor_fix_local_backend_tests": 39,
+  "editor_fix_local_browser_seconds": 13.56
 }

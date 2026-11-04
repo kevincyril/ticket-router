@@ -267,10 +267,15 @@ def test_real_development_cases_are_reviewed(client,monkeypatch,text):
     assert 'automatic_routing_disabled' in result['routing_evidence']['review_reasons']
 
 @pytest.mark.integration
-def test_public_demo_only_accepts_synthetic_examples(client,monkeypatch):
+def test_public_demo_accepts_custom_requests_with_size_limits(client,monkeypatch):
     from app.main import demo_examples
     monkeypatch.setattr(settings(),'demo_mode',True)
-    assert submit(client,'Do not accept arbitrary private visitor content').status_code==422
+    custom='A single book purchase appears twice on my statement. Please investigate.'
+    response=submit(client,custom)
+    assert response.status_code==202 and response.json()['text']==custom
+    assert client.get('/api/tickets/'+response.json()['id']).json()['text']==custom
+    assert submit(client,'tiny').status_code==422
+    assert submit(client,'x'*5001).status_code==422
     assert submit(client,demo_examples()[0]).status_code==202
 
 

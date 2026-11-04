@@ -108,8 +108,6 @@ def ready():
 
 @app.post("/api/tickets", status_code=202)
 def submit(body: Submission, idempotency_key: str = Header(min_length=1, max_length=128)):
-    if settings().demo_mode and body.text not in demo_examples():
-        raise HTTPException(422,"Public demo accepts only its supplied synthetic examples")
     digest = hashlib.sha256(body.text.encode()).hexdigest()
     with Session() as db:
         previous = db.scalar(select(Ticket).where(Ticket.idempotency_key == idempotency_key))

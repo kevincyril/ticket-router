@@ -71,7 +71,7 @@ The data preparation/training settings, versions, split manifests, environment, 
 
 ## Free hosted demo
 
-`render.yaml` defines a free-only Render preview: one Docker web instance supervising API/dispatcher/worker, plus free Redis-compatible Key Value and an external Neon Free PostgreSQL database. Hosting requires connecting Render and granting access to this private repository; a prepared configuration is not a live deployment. The public sandbox accepts only supplied synthetic examples, disables free-text review notes and caps storage at500 tickets. Mandatory review remains enabled. See [the concrete deployment setup](docs/DEPLOYMENT.md), including idle sleep and free usage quotas. Neon avoids the earlier30-day Render database expiry; recruiters can use the public link without signing in.
+`render.yaml` defines a free-only Render preview: one Docker web instance supervising API/dispatcher/worker, plus free Redis-compatible Key Value and an external Neon Free PostgreSQL database. Hosting requires connecting Render and granting access to this private repository; a prepared configuration is not a live deployment. The public sandbox accepts custom invented requests and editable example presets, disables free-text review notes and caps storage at500 tickets. Mandatory review remains enabled. See [the concrete deployment setup](docs/DEPLOYMENT.md), including idle sleep and free usage quotas. Neon avoids the earlier30-day Render database expiry; recruiters can use the public link without signing in.
 
 The committed ~2.3MB bundle in `deploy/` contains only the already-trained serving model/support artifacts and a checksum manifest. It is extracted and verified during image build; no training or large checkpoint download happens in deployment.
 
