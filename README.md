@@ -4,9 +4,15 @@ A local portfolio service with FastAPI, Pydantic, SQLAlchemy/PostgreSQL, Redis/R
 
 **Current mode is review-first: automatic routing is disabled.** Broader manual tests exposed confident classification errors hidden by the easy synthetic source benchmark. The improved word/character classifier and validation-selected abstention policy reduce experimental unsafe routes but remain unreliable. All new tickets receive model suggestions and require a human routing decision. Existing ticket results remain unchanged.
 
+**[Try the live demo](https://relay-ticket-demo.onrender.com/)** ? **[Source code](https://github.com/kevincyril/ticket-router)** ? **[Architecture](docs/ARCHITECTURE.md)** ? **[Evaluation and limitations](docs/ROBUSTNESS.md)**
+
+For a quick walkthrough, submit an invented support request (or edit an example), inspect the suggested category and review reasons, then make a human routing decision. The dashboard also shows evaluation results. Use synthetic information only: this is a shared public sandbox. The free host may take about a minute to wake after inactivity.
+
 ## Open the app
 
-Dependencies, models and dashboard are already installed and built in this workspace. Services are left running for review at **http://127.0.0.1:8000**. Interactive API docs: **http://127.0.0.1:8000/docs**.
+Recruiters can open **[the hosted app](https://relay-ticket-demo.onrender.com/)** and **[interactive API docs](https://relay-ticket-demo.onrender.com/docs)** without installing anything.
+
+For local development in the prepared workspace, start the services below, then open **http://127.0.0.1:8000** (dashboard) or **http://127.0.0.1:8000/docs** (API docs).
 
 If stopped, launch from this workspace:
 
@@ -71,7 +77,7 @@ The data preparation/training settings, versions, split manifests, environment, 
 
 ## Free hosted demo
 
-`render.yaml` defines a free-only Render preview: one Docker web instance supervising API/dispatcher/worker, plus free Redis-compatible Key Value and an external Neon Free PostgreSQL database. Hosting requires connecting Render and granting access to this private repository; a prepared configuration is not a live deployment. The public sandbox accepts custom invented requests and editable example presets, disables free-text review notes and caps storage at500 tickets. Mandatory review remains enabled. See [the concrete deployment setup](docs/DEPLOYMENT.md), including idle sleep and free usage quotas. Neon avoids the earlier30-day Render database expiry; recruiters can use the public link without signing in.
+`render.yaml` defines a free-only Render preview: one Docker web instance supervising API/dispatcher/worker, plus free Redis-compatible Key Value and an external Neon Free PostgreSQL database. Open the hosted project at **[relay-ticket-demo.onrender.com](https://relay-ticket-demo.onrender.com/)**. The public sandbox accepts custom invented requests and editable example presets, disables free-text review notes and caps storage at500 tickets. Mandatory review remains enabled. See [the concrete deployment setup](docs/DEPLOYMENT.md), including idle sleep and free usage quotas. Neon avoids the earlier30-day Render database expiry; recruiters can use the public link without signing in.
 
 The committed ~2.3MB bundle in `deploy/` contains only the already-trained serving model/support artifacts and a checksum manifest. It is extracted and verified during image build; no training or large checkpoint download happens in deployment.
 
@@ -95,7 +101,7 @@ docker compose config
 docker compose up --build -d
 ```
 
-Compose targets PostgreSQL17 and Redis7. **Docker is unavailable on the local Windows host.** GitHub Actions now builds the image and verifies real queued inference with a Linux RQ worker under a512MB memory limit. Compose startup itself remains unverified. Native PostgreSQL/Redis, API, dispatcher, worker, migrations and browser flow have run successfully. No resources were provisioned and nothing was published. See [deployment notes](docs/DEPLOYMENT.md) and [architecture](docs/ARCHITECTURE.md), with historical sections identified.
+Compose targets PostgreSQL17 and Redis7. **Docker is unavailable on the local Windows host.** GitHub Actions now builds the image and verifies real queued inference with a Linux RQ worker under a512MB memory limit. Compose startup itself remains unverified. Native PostgreSQL/Redis, API, dispatcher, worker, migrations and browser flow have run successfully. The hosted demo is linked above; these local verification notes describe the development environment. See [deployment notes](docs/DEPLOYMENT.md) and [architecture](docs/ARCHITECTURE.md), with historical sections identified.
 
 ## Tests
 
