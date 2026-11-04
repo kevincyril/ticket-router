@@ -1,0 +1,65 @@
+{"id": "validation-001", "kind": "paraphrase", "text": "My debit card gets rejected at checkout.", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "validation-002", "kind": "paraphrase", "text": "A transaction appears twice on my statement.", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "validation-003", "kind": "paraphrase", "text": "Which ways of paying do you accept?", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "validation-004", "kind": "paraphrase", "text": "How long until my reimbursement reaches me?", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "validation-005", "kind": "paraphrase", "text": "What conditions apply to getting my money back?", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "validation-006", "kind": "paraphrase", "text": "Please return the money for the unwanted item.", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "validation-007", "kind": "paraphrase", "text": "I forgot the secret phrase for signing in.", "acceptable_labels": ["ACCOUNT"], "must_review": false}
+{"id": "validation-008", "kind": "paraphrase", "text": "I want to close my customer profile permanently.", "acceptable_labels": ["ACCOUNT"], "must_review": false}
+{"id": "validation-009", "kind": "paraphrase", "text": "Can I register a new customer login?", "acceptable_labels": ["ACCOUNT"], "must_review": false}
+{"id": "validation-010", "kind": "paraphrase", "text": "I want to purchase a replacement kettle.", "acceptable_labels": ["ORDER"], "must_review": false}
+{"id": "validation-011", "kind": "paraphrase", "text": "Stop the purchase I submitted this morning.", "acceptable_labels": ["ORDER"], "must_review": false}
+{"id": "validation-012", "kind": "paraphrase", "text": "How far along is my purchase?", "acceptable_labels": ["ORDER"], "must_review": false}
+{"id": "validation-013", "kind": "paraphrase", "text": "The destination on my purchase needs correcting.", "acceptable_labels": ["SHIPPING"], "must_review": false}
+{"id": "validation-014", "kind": "paraphrase", "text": "Save my new postal address for future purchases.", "acceptable_labels": ["SHIPPING"], "must_review": false}
+{"id": "validation-015", "kind": "paraphrase", "text": "Send the package to my office instead.", "acceptable_labels": ["SHIPPING"], "must_review": false}
+{"id": "validation-016", "kind": "paraphrase", "text": "Is express delivery available?", "acceptable_labels": ["DELIVERY"], "must_review": false}
+{"id": "validation-017", "kind": "paraphrase", "text": "How many days does delivery normally take?", "acceptable_labels": ["DELIVERY"], "must_review": false}
+{"id": "validation-018", "kind": "paraphrase", "text": "Do you offer weekend delivery?", "acceptable_labels": ["DELIVERY"], "must_review": false}
+{"id": "validation-019", "kind": "paraphrase", "text": "Email me the bill for my last purchase.", "acceptable_labels": ["INVOICE"], "must_review": false}
+{"id": "validation-020", "kind": "paraphrase", "text": "The invoice contains an incorrect amount.", "acceptable_labels": ["INVOICE"], "must_review": false}
+{"id": "validation-021", "kind": "paraphrase", "text": "Where can I download my receipt?", "acceptable_labels": ["INVOICE"], "must_review": false}
+{"id": "validation-022", "kind": "paraphrase", "text": "Connect me with a support representative.", "acceptable_labels": ["CONTACT"], "must_review": false}
+{"id": "validation-023", "kind": "paraphrase", "text": "What number can I call for customer assistance?", "acceptable_labels": ["CONTACT"], "must_review": false}
+{"id": "validation-024", "kind": "paraphrase", "text": "How do I speak with a real person?", "acceptable_labels": ["CONTACT"], "must_review": false}
+{"id": "validation-025", "kind": "paraphrase", "text": "I would like to share a suggestion about your store.", "acceptable_labels": ["FEEDBACK"], "must_review": false}
+{"id": "validation-026", "kind": "paraphrase", "text": "Your service was terrible and I want to complain.", "acceptable_labels": ["FEEDBACK"], "must_review": false}
+{"id": "validation-027", "kind": "paraphrase", "text": "Where can I leave a product review?", "acceptable_labels": ["FEEDBACK"], "must_review": false}
+{"id": "validation-028", "kind": "paraphrase", "text": "Will I be charged a penalty if I cancel?", "acceptable_labels": ["CANCEL"], "must_review": false}
+{"id": "validation-029", "kind": "paraphrase", "text": "What is the cancellation charge?", "acceptable_labels": ["CANCEL"], "must_review": false}
+{"id": "validation-030", "kind": "paraphrase", "text": "Does withdrawing a purchase incur a fee?", "acceptable_labels": ["CANCEL"], "must_review": false}
+{"id": "validation-031", "kind": "paraphrase", "text": "Stop sending your promotional newsletter.", "acceptable_labels": ["SUBSCRIPTION"], "must_review": false}
+{"id": "validation-032", "kind": "paraphrase", "text": "Sign me up for your email newsletter.", "acceptable_labels": ["SUBSCRIPTION"], "must_review": false}
+{"id": "validation-033", "kind": "paraphrase", "text": "How can I opt out of marketing emails?", "acceptable_labels": ["SUBSCRIPTION"], "must_review": false}
+{"id": "validation-034", "kind": "vague", "text": "Can somebody look into this?", "acceptable_labels": [], "must_review": true}
+{"id": "validation-035", "kind": "vague", "text": "It did not work as I expected.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-036", "kind": "vague", "text": "I have a problem with your service.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-037", "kind": "vague", "text": "Help me sort this out.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-038", "kind": "vague", "text": "This is really confusing.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-039", "kind": "vague", "text": "I need assistance urgently.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-040", "kind": "vague", "text": "There is an issue here.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-041", "kind": "vague", "text": "I am unhappy about what happened.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-042", "kind": "vague", "text": "Can you fix it for me?", "acceptable_labels": [], "must_review": true}
+{"id": "validation-043", "kind": "vague", "text": "Things are not going well.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-044", "kind": "mixed", "text": "My card was billed incorrectly and I want a reimbursement.", "acceptable_labels": ["PAYMENT", "REFUND"], "must_review": true}
+{"id": "validation-045", "kind": "mixed", "text": "There is a second debit and I need the extra funds returned.", "acceptable_labels": ["PAYMENT", "REFUND"], "must_review": true}
+{"id": "validation-046", "kind": "mixed", "text": "Delete my profile and cancel the purchase.", "acceptable_labels": ["ACCOUNT", "ORDER"], "must_review": true}
+{"id": "validation-047", "kind": "mixed", "text": "Reset my password and tell me where my purchase is.", "acceptable_labels": ["ACCOUNT", "ORDER"], "must_review": true}
+{"id": "validation-048", "kind": "mixed", "text": "Change my destination and send me a receipt.", "acceptable_labels": ["SHIPPING", "INVOICE"], "must_review": true}
+{"id": "validation-049", "kind": "mixed", "text": "Correct my postal address and fix the invoice.", "acceptable_labels": ["SHIPPING", "INVOICE"], "must_review": true}
+{"id": "validation-050", "kind": "mixed", "text": "Where is my reimbursement and how do I speak to an agent?", "acceptable_labels": ["REFUND", "CONTACT"], "must_review": true}
+{"id": "validation-051", "kind": "mixed", "text": "Send my money back and connect me with support.", "acceptable_labels": ["REFUND", "CONTACT"], "must_review": true}
+{"id": "validation-052", "kind": "mixed", "text": "Remove me from the mailing list and explain express delivery.", "acceptable_labels": ["SUBSCRIPTION", "DELIVERY"], "must_review": true}
+{"id": "validation-053", "kind": "mixed", "text": "Subscribe me to promotions and explain delivery times.", "acceptable_labels": ["SUBSCRIPTION", "DELIVERY"], "must_review": true}
+{"id": "validation-054", "kind": "out_of_scope", "text": "Write me a Python program.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-055", "kind": "out_of_scope", "text": "What is the weather in Madrid?", "acceptable_labels": [], "must_review": true}
+{"id": "validation-056", "kind": "out_of_scope", "text": "Recommend a pasta recipe.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-057", "kind": "out_of_scope", "text": "My dog refuses to eat.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-058", "kind": "out_of_scope", "text": "Translate this poem into French.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-059", "kind": "out_of_scope", "text": "Solve a quadratic equation.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-060", "kind": "out_of_scope", "text": "Tell me about the Roman empire.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-061", "kind": "out_of_scope", "text": "Book a medical appointment.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-062", "kind": "out_of_scope", "text": "Can you diagnose a headache?", "acceptable_labels": [], "must_review": true}
+{"id": "validation-063", "kind": "out_of_scope", "text": "Who won the football game?", "acceptable_labels": [], "must_review": true}
+{"id": "validation-064", "kind": "out_of_scope", "text": "My computer has a blue screen.", "acceptable_labels": [], "must_review": true}
+{"id": "validation-065", "kind": "out_of_scope", "text": "I need advice on a mortgage.", "acceptable_labels": [], "must_review": true}

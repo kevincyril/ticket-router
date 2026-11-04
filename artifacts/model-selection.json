@@ -1,0 +1,32 @@
+{
+  "deployed": "baseline",
+  "policy": "Among models with validation macro-F1 >=0.99, choose lower batch-one median CPU latency; compare artifact size and process RSS. Test is reporting only.",
+  "candidates": {
+    "baseline": {
+      "validation_macro_f1": 0.9967936783865309,
+      "latency": {
+        "samples": 100,
+        "batch_size": 1,
+        "median_ms": 0.5988000193610787,
+        "p95_ms": 0.7499050028854981,
+        "serial_throughput_per_second": 1615.263596779479,
+        "protocol": "Warm CPU serial batch-one, 5 warmups +100 timed; no training concurrent; baseline BLAS threads2, transformer torch threads4"
+      },
+      "process_rss_mb": 203.5546875,
+      "artifact_bytes": 523492
+    },
+    "transformer": {
+      "validation_macro_f1": 0.9991892367858445,
+      "latency": {
+        "samples": 100,
+        "batch_size": 1,
+        "median_ms": 4.28769999416545,
+        "p95_ms": 5.731480024405754,
+        "serial_throughput_per_second": 224.36505848535472,
+        "protocol": "Warm CPU serial batch-one, 5 warmups +100 timed; no training concurrent; baseline BLAS threads2, transformer torch threads4"
+      },
+      "process_rss_mb": 783.4765625,
+      "artifact_bytes": 18499775
+    }
+  }
+}

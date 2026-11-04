@@ -1,0 +1,39 @@
+{
+  "kind": "tfidf-logistic-regression",
+  "version": "baseline-5a5de5a6adf0",
+  "labels": [
+    "ACCOUNT",
+    "CANCEL",
+    "CONTACT",
+    "DELIVERY",
+    "FEEDBACK",
+    "INVOICE",
+    "ORDER",
+    "PAYMENT",
+    "REFUND",
+    "SHIPPING",
+    "SUBSCRIPTION"
+  ],
+  "threshold": 0.5,
+  "seed": 42,
+  "C": 2,
+  "data_sha256": "76a759ae696d6f4079cfddf9335a86b08ffd809b148f8c6355d1e89df5341e4f",
+  "split_sha256": "2fc2958e8c8cc61164b5f828120b9faf9b9e126a8c86830794caf1805fbd25b3",
+  "training_seconds": 5.884021000005305,
+  "artifact_bytes": 523492,
+  "command": "python -m ml.train_baseline",
+  "environment": {
+    "python": "3.12.16 (main, Oct 26 2026, 14:10:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpus": 22,
+    "ram_gb": 15.46,
+    "packages": {
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "torch": "2.15.0",
+      "transformers": "4.57.6"
+    }
+  },
+  "evaluation_command": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 python -m ml.evaluate_saved"
+}

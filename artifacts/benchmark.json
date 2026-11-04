@@ -1,0 +1,321 @@
+{
+  "command": "python -m scripts.benchmark --count 40 --concurrency 4",
+  "count": 40,
+  "concurrency": 4,
+  "poll_interval_seconds": 0.05,
+  "workers": 1,
+  "worker_mode": "persistent supervised Windows SimpleWorker; model preloaded once",
+  "workload": "8 synthetic demo texts repeated; not held-out evaluation data",
+  "elapsed_seconds": 9.62742169998819,
+  "throughput_per_second": 4.154798786891102,
+  "failed": 0,
+  "summary": {
+    "end_to_end_ms": {
+      "median": 1028.9762500033248,
+      "p95": 1070.7508749590488
+    },
+    "queue_wait_ms": {
+      "median": 930.4965,
+      "p95": 973.77145
+    },
+    "inference_ms": {
+      "median": 2.9292500112205744,
+      "p95": 3.306645029806532
+    }
+  },
+  "rows": [
+    {
+      "id": "a0ef4631-9f37-44dc-bde6-6d7bf1ce2d1a",
+      "status": "routed",
+      "end_to_end_ms": 308.50580002879724,
+      "queue_wait_ms": 157.782,
+      "inference_ms": 3.313200024422258
+    },
+    {
+      "id": "2febef68-1d58-49f7-a885-56dcc2a4ebef",
+      "status": "review",
+      "end_to_end_ms": 303.54440002702177,
+      "queue_wait_ms": 195.93099999999998,
+      "inference_ms": 2.9881999944336712
+    },
+    {
+      "id": "bf36c42d-a87b-4401-a924-63833b24252a",
+      "status": "routed",
+      "end_to_end_ms": 295.1183000113815,
+      "queue_wait_ms": 226.106,
+      "inference_ms": 2.688899985514581
+    },
+    {
+      "id": "5a3744ae-5d94-4735-84ea-36f104bfa10a",
+      "status": "routed",
+      "end_to_end_ms": 340.4201000230387,
+      "queue_wait_ms": 197.136,
+      "inference_ms": 2.7877999818883836
+    },
+    {
+      "id": "35caa55b-d465-4218-9f87-608da0e45086",
+      "status": "review",
+      "end_to_end_ms": 959.5469000050798,
+      "queue_wait_ms": 900.415,
+      "inference_ms": 2.79880000744015
+    },
+    {
+      "id": "dcdfe9b4-da52-4a8b-a84e-76ccf97b9fbd",
+      "status": "review",
+      "end_to_end_ms": 1012.9667999572121,
+      "queue_wait_ms": 929.346,
+      "inference_ms": 2.9830000130459666
+    },
+    {
+      "id": "df78f33b-465b-4e77-813b-84d47fbac030",
+      "status": "routed",
+      "end_to_end_ms": 1019.0388999762945,
+      "queue_wait_ms": 961.341,
+      "inference_ms": 2.9931000317446887
+    },
+    {
+      "id": "25f85032-8607-4361-aafe-94f6a0992822",
+      "status": "routed",
+      "end_to_end_ms": 1044.7726999991573,
+      "queue_wait_ms": 963.45,
+      "inference_ms": 2.6726999785751104
+    },
+    {
+      "id": "d8d7be6d-09e1-4ba0-afb8-b6f1a0fcc0e7",
+      "status": "routed",
+      "end_to_end_ms": 1070.3220999566838,
+      "queue_wait_ms": 976.041,
+      "inference_ms": 2.959400007966906
+    },
+    {
+      "id": "39bd94aa-652b-4b7d-b94e-3f776488250b",
+      "status": "review",
+      "end_to_end_ms": 1023.9289000164717,
+      "queue_wait_ms": 947.673,
+      "inference_ms": 4.1541000246070325
+    },
+    {
+      "id": "502e24f4-8d49-4015-9eba-eb95c860336d",
+      "status": "routed",
+      "end_to_end_ms": 1047.3743999609724,
+      "queue_wait_ms": 979.602,
+      "inference_ms": 3.0323999817483127
+    },
+    {
+      "id": "0b34e7e0-33d1-44ee-b5bd-f2daefd2d348",
+      "status": "routed",
+      "end_to_end_ms": 1026.7135999747552,
+      "queue_wait_ms": 950.388,
+      "inference_ms": 3.2348999520763755
+    },
+    {
+      "id": "15beebe9-6641-4e2f-a8ce-5e98c7ea56ad",
+      "status": "review",
+      "end_to_end_ms": 1057.9568999819458,
+      "queue_wait_ms": 931.647,
+      "inference_ms": 3.1831999658606946
+    },
+    {
+      "id": "4fa1e32f-a668-4980-85b1-7b08ead87b0e",
+      "status": "review",
+      "end_to_end_ms": 1030.460900045,
+      "queue_wait_ms": 965.647,
+      "inference_ms": 3.2603000290691853
+    },
+    {
+      "id": "005cc437-dd1d-4afd-8659-c4a999453332",
+      "status": "routed",
+      "end_to_end_ms": 1066.5473999688402,
+      "queue_wait_ms": 973.6519999999999,
+      "inference_ms": 2.7572999824769795
+    },
+    {
+      "id": "30ad5e30-c813-4cce-903b-851d7b6bf546",
+      "status": "routed",
+      "end_to_end_ms": 1035.371900012251,
+      "queue_wait_ms": 965.656,
+      "inference_ms": 2.955599979031831
+    },
+    {
+      "id": "fdffb75f-00be-4b74-8738-e09f310fc41f",
+      "status": "routed",
+      "end_to_end_ms": 1059.1129999957047,
+      "queue_wait_ms": 921.8009999999999,
+      "inference_ms": 2.6240000152029097
+    },
+    {
+      "id": "bb6228d3-6a70-4e87-9691-d020a2bdafa7",
+      "status": "review",
+      "end_to_end_ms": 1036.1880999989808,
+      "queue_wait_ms": 953.8290000000001,
+      "inference_ms": 3.0524000176228583
+    },
+    {
+      "id": "b4f51bc7-8667-4244-9cc7-c37fb7ffaee1",
+      "status": "routed",
+      "end_to_end_ms": 1032.24119998049,
+      "queue_wait_ms": 927.805,
+      "inference_ms": 3.036400012206286
+    },
+    {
+      "id": "dd8540c5-e71e-4e8b-8f9b-1cd15f2dbd89",
+      "status": "routed",
+      "end_to_end_ms": 1065.4362999484874,
+      "queue_wait_ms": 943.116,
+      "inference_ms": 2.381899976171553
+    },
+    {
+      "id": "961a8bbd-78bd-4862-b123-a8683c1cdda3",
+      "status": "review",
+      "end_to_end_ms": 1051.6252999659628,
+      "queue_wait_ms": 907.2869999999999,
+      "inference_ms": 2.993799978867173
+    },
+    {
+      "id": "e2436220-9676-47bd-b059-af411d1abae6",
+      "status": "review",
+      "end_to_end_ms": 1027.9171000001952,
+      "queue_wait_ms": 942.289,
+      "inference_ms": 2.899999963119626
+    },
+    {
+      "id": "cdd68881-6d2e-4677-914f-5607ffd4f2ca",
+      "status": "routed",
+      "end_to_end_ms": 1032.6455000322312,
+      "queue_wait_ms": 938.317,
+      "inference_ms": 2.882200002204627
+    },
+    {
+      "id": "a0aa64e8-7e1c-4bb5-93ee-4d0d6a722aed",
+      "status": "routed",
+      "end_to_end_ms": 1027.6676999637857,
+      "queue_wait_ms": 927.288,
+      "inference_ms": 2.6859999634325504
+    },
+    {
+      "id": "77bf543e-2099-4020-bd7e-4eaf6d6ac92a",
+      "status": "routed",
+      "end_to_end_ms": 1041.2956000072882,
+      "queue_wait_ms": 901.544,
+      "inference_ms": 3.055499983020127
+    },
+    {
+      "id": "e3a2c55e-3975-440f-8985-431066304b91",
+      "status": "review",
+      "end_to_end_ms": 1058.7780000059865,
+      "queue_wait_ms": 933.855,
+      "inference_ms": 2.9168000328354537
+    },
+    {
+      "id": "af1b4061-3548-4c54-a382-eed2c7bfc3d1",
+      "status": "routed",
+      "end_to_end_ms": 1016.5473999804817,
+      "queue_wait_ms": 940.859,
+      "inference_ms": 2.9445000109262764
+    },
+    {
+      "id": "70a104b1-8550-4a57-a03a-7515f7d7f10c",
+      "status": "routed",
+      "end_to_end_ms": 1026.8004999961704,
+      "queue_wait_ms": 928.2660000000001,
+      "inference_ms": 2.9203000012785196
+    },
+    {
+      "id": "6025ca4e-78e4-4228-82cd-700034fbe22c",
+      "status": "review",
+      "end_to_end_ms": 1078.8976000039838,
+      "queue_wait_ms": 889.848,
+      "inference_ms": 3.134500002488494
+    },
+    {
+      "id": "e05c2e99-fd8b-4c93-b205-f6dfbd3aa909",
+      "status": "review",
+      "end_to_end_ms": 1102.5738999596797,
+      "queue_wait_ms": 917.4449999999999,
+      "inference_ms": 2.6479000225663185
+    },
+    {
+      "id": "fa1a9131-aaaf-46ec-937b-688a2170972f",
+      "status": "routed",
+      "end_to_end_ms": 1069.8456999962218,
+      "queue_wait_ms": 951.717,
+      "inference_ms": 2.8363000019453466
+    },
+    {
+      "id": "23c177fb-14b6-4756-80b1-841fb4d625f4",
+      "status": "routed",
+      "end_to_end_ms": 1024.891899956856,
+      "queue_wait_ms": 956.765,
+      "inference_ms": 2.876700018532574
+    },
+    {
+      "id": "d79c524b-77ce-46fb-9d9d-790addd41619",
+      "status": "routed",
+      "end_to_end_ms": 910.7687000068836,
+      "queue_wait_ms": 817.935,
+      "inference_ms": 3.306300030089915
+    },
+    {
+      "id": "991fef05-1db3-4a03-9378-8d69b213f1ad",
+      "status": "review",
+      "end_to_end_ms": 983.3362000063062,
+      "queue_wait_ms": 857.048,
+      "inference_ms": 3.2799000036902726
+    },
+    {
+      "id": "4698fcf1-80d4-4315-a4ec-017ebb9c3c7e",
+      "status": "routed",
+      "end_to_end_ms": 987.8349999780767,
+      "queue_wait_ms": 877.068,
+      "inference_ms": 2.7009000186808407
+    },
+    {
+      "id": "51a2b60c-a8f5-430a-bff6-b08dd57d120d",
+      "status": "routed",
+      "end_to_end_ms": 976.1692000320181,
+      "queue_wait_ms": 905.454,
+      "inference_ms": 2.246399992145598
+    },
+    {
+      "id": "ac4e7257-60ae-452f-9d76-7544ec48cf6a",
+      "status": "review",
+      "end_to_end_ms": 1047.1161000314169,
+      "queue_wait_ms": 964.467,
+      "inference_ms": 2.498700050637126
+    },
+    {
+      "id": "9c7bf35c-eeac-4b43-b482-5ec8b2e79947",
+      "status": "review",
+      "end_to_end_ms": 971.8624000088312,
+      "queue_wait_ms": 908.7539999999999,
+      "inference_ms": 2.938200021162629
+    },
+    {
+      "id": "91af65a3-528c-46a1-89b5-87054239de70",
+      "status": "routed",
+      "end_to_end_ms": 1030.0354000064544,
+      "queue_wait_ms": 926.18,
+      "inference_ms": 2.585000009275973
+    },
+    {
+      "id": "02e4b574-e481-4b7e-a7c1-b69966824dec",
+      "status": "routed",
+      "end_to_end_ms": 1022.2436000476591,
+      "queue_wait_ms": 952.1800000000001,
+      "inference_ms": 2.6585999876260757
+    }
+  ],
+  "environment": {
+    "python": "3.12.16 (main, Oct 26 2026, 14:10:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpus": 22,
+    "ram_gb": 15.46,
+    "packages": {
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "torch": "2.15.0",
+      "transformers": "4.57.6"
+    }
+  }
+}

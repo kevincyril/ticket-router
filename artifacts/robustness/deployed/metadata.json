@@ -1,0 +1,33 @@
+{
+  "version": "robust-378279f9c844-56b3746d",
+  "kind": "balanced-word-char-logistic-regression",
+  "display_name": "Balanced word + character classifier",
+  "labels": [
+    "ACCOUNT",
+    "CANCEL",
+    "CONTACT",
+    "DELIVERY",
+    "FEEDBACK",
+    "INVOICE",
+    "ORDER",
+    "PAYMENT",
+    "REFUND",
+    "SHIPPING",
+    "SUBSCRIPTION"
+  ],
+  "threshold": 0.65,
+  "temperature": 0.5000059392867954,
+  "routing_policy": {
+    "confidence": 0.65,
+    "similarity": 0.4,
+    "margin": 0,
+    "require_neighbor_agreement": true,
+    "clause_min_similarity": 0.35
+  },
+  "selection_sha256": "56b3746dbd10bf239a704083021214c120f0b439f0e95f9384cb121c30066757",
+  "training_data_sha256": "76a759ae696d6f4079cfddf9335a86b08ffd809b148f8c6355d1e89df5341e4f",
+  "artifact_sha256": "378279f9c8443c176f002bc797ee61c188756a1180a506b1bc42a0a6d32b8052",
+  "support_sha256": "67e261ec31b7977d5a023c85f2f2809f173f9914cc17546c5f19f947d77a1d39",
+  "confidence_meaning": "Temperature-scaled class probability conditional on supported single intent; not probability of safe routing.",
+  "thresholds_chosen_using_validation_only": true
+}

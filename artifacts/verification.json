@@ -1,0 +1,25 @@
+{
+  "verified_date": "2026-11-03",
+  "timezone": "America/Phoenix",
+  "backend_tests": 19,
+  "browser_tests": 1,
+  "backend_command": "python scripts/test_local.py",
+  "browser_command": "BROWSER_BASE_URL=http://127.0.0.1:8000 python -m pytest tests/test_browser.py -q",
+  "frontend_build": "npm run build (TypeScript + Vite), passed",
+  "runtime": "native Windows PostgreSQL18, Redis5.0.14.1, persistent supervised RQ worker",
+  "not_executed": [
+    "Docker image build",
+    "Compose startup",
+    "Linux fork worker runtime",
+    "Remote GitHub Actions"
+  ],
+  "screenshots": [
+    "test-results/dashboard.png",
+    "test-results/mobile.png",
+    "test-results/evaluation.png"
+  ],
+  "launcher": "scripts/start-local.ps1 verified; stop-local.ps1 shutdown and restart verified",
+  "final_readiness": "200 ready, baseline-5a5de5a6adf0, confidence threshold0.5, all11 routes",
+  "final_backend_seconds": 8.79,
+  "final_browser_seconds": 15.78
+}

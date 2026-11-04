@@ -1,0 +1,17 @@
+{
+  "automatic_routing_enabled": false,
+  "mode": "review_first",
+  "candidate": "improved",
+  "reason": "Frozen validation-selected candidate failed held-out challenge reliability: 7 unsafe routes in17 automatic decisions. Automatic routing disabled; no test-based threshold adjustment or model reselection.",
+  "test_used_as": "Promotion veto, not threshold optimization. All experimental thresholds and predictions retained.",
+  "restore_requirements": "Collect representative labeled validation data and an independently annotated untouched test set; revalidate coverage/risk before enabling automatic routing.",
+  "deployed_heldout_policy": {
+    "count": 88,
+    "auto_routed": 0,
+    "auto_coverage": 0.0,
+    "auto_accuracy": null,
+    "manual_review_rate": 1.0,
+    "confident_misrouting_count": 0
+  },
+  "confidence_warning": "Scaling sharpened scores based on in-domain validation but worsened high-confidence unsafe predictions under shift. These scores must not be interpreted as safe-routing probabilities."
+}

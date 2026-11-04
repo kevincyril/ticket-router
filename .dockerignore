@@ -1,0 +1,13 @@
+﻿.venv
+.runtime
+.tools
+.local
+.git
+.env
+frontend/node_modules
+frontend/dist
+data
+__pycache__
+.pytest_cache
+test-results
+artifacts/transformer/checkpoint

@@ -1,0 +1,138 @@
+{
+  "note": "Development cases submitted through real HTTP, dispatcher, Redis/RQ, worker and PostgreSQL; not evaluation.",
+  "tickets": [
+    {
+      "id": "39ce8e15-8507-4669-85fe-e290d76e8599",
+      "text": "Money left my account two times for one purchase.",
+      "status": "review",
+      "model_version": "robust-378279f9c844-56b3746d",
+      "predicted_category": "ACCOUNT",
+      "confidence": 0.9461683064868841,
+      "assigned_team": null,
+      "routing_evidence": {
+        "raw_confidence": 0.6954432664588516,
+        "temperature": 0.5000059392867954,
+        "top_categories": [
+          {
+            "category": "ACCOUNT",
+            "confidence": 0.9461683064868841
+          },
+          {
+            "category": "REFUND",
+            "confidence": 0.03434231696876227
+          },
+          {
+            "category": "ORDER",
+            "confidence": 0.01755016659932816
+          }
+        ],
+        "review_reasons": [
+          "insufficient_training_support",
+          "automatic_routing_disabled"
+        ],
+        "nearest_similarity": 0.2633002976551687,
+        "neighbor_agreement": true,
+        "clause_conflict": false,
+        "candidate_auto_route": false
+      },
+      "threshold": 0.65,
+      "attempts": 1,
+      "created_at": "2026-11-03T19:55:40.674709-07:00",
+      "updated_at": "2026-11-03T19:55:41.220325-07:00",
+      "completed_at": "2026-11-03T19:55:41.220325-07:00",
+      "queue_wait_ms": 527.3090000000001,
+      "inference_ms": 10.711499955505133,
+      "last_error": null,
+      "review": null
+    },
+    {
+      "id": "35628fc7-2e60-486c-b4c7-83b7bef88527",
+      "text": "Something is wrong. Please help.",
+      "status": "review",
+      "model_version": "robust-378279f9c844-56b3746d",
+      "predicted_category": "ORDER",
+      "confidence": 0.9833279642707204,
+      "assigned_team": null,
+      "routing_evidence": {
+        "raw_confidence": 0.7286064644421821,
+        "temperature": 0.5000059392867954,
+        "top_categories": [
+          {
+            "category": "ORDER",
+            "confidence": 0.9833279642707204
+          },
+          {
+            "category": "REFUND",
+            "confidence": 0.005021533107500436
+          },
+          {
+            "category": "FEEDBACK",
+            "confidence": 0.0025075629953322043
+          }
+        ],
+        "review_reasons": [
+          "automatic_routing_disabled"
+        ],
+        "nearest_similarity": 0.4783471288621893,
+        "neighbor_agreement": true,
+        "clause_conflict": false,
+        "candidate_auto_route": true
+      },
+      "threshold": 0.65,
+      "attempts": 1,
+      "created_at": "2026-11-03T19:55:41.563338-07:00",
+      "updated_at": "2026-11-03T19:55:42.240238-07:00",
+      "completed_at": "2026-11-03T19:55:42.240238-07:00",
+      "queue_wait_ms": 649.807,
+      "inference_ms": 9.72540001384914,
+      "last_error": null,
+      "review": null
+    },
+    {
+      "id": "6794e0de-c6ef-49eb-a5e3-e339bb525812",
+      "text": "I was charged twice for the same order. Can you refund the extra payment?",
+      "status": "review",
+      "model_version": "robust-378279f9c844-56b3746d",
+      "predicted_category": "PAYMENT",
+      "confidence": 0.7225100209792059,
+      "assigned_team": null,
+      "routing_evidence": {
+        "raw_confidence": 0.47599838269377165,
+        "temperature": 0.5000059392867954,
+        "top_categories": [
+          {
+            "category": "PAYMENT",
+            "confidence": 0.7225100209792059
+          },
+          {
+            "category": "REFUND",
+            "confidence": 0.23401541735067566
+          },
+          {
+            "category": "CANCEL",
+            "confidence": 0.021319376452996808
+          }
+        ],
+        "review_reasons": [
+          "insufficient_training_support",
+          "nearest_example_disagrees",
+          "conflicting_clause_predictions",
+          "automatic_routing_disabled"
+        ],
+        "nearest_similarity": 0.3666837843942736,
+        "neighbor_agreement": false,
+        "clause_conflict": true,
+        "candidate_auto_route": false
+      },
+      "threshold": 0.65,
+      "attempts": 1,
+      "created_at": "2026-11-03T19:55:42.402035-07:00",
+      "updated_at": "2026-11-03T19:55:43.512254-07:00",
+      "completed_at": "2026-11-03T19:55:43.512254-07:00",
+      "queue_wait_ms": 1086.777,
+      "inference_ms": 14.88870003959164,
+      "last_error": null,
+      "review": null
+    }
+  ]
+}

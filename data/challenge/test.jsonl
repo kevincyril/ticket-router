@@ -1,0 +1,88 @@
+{"id": "test-001", "kind": "paraphrase", "text": "The checkout refuses my bank card even though it has funds.", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "test-002", "kind": "paraphrase", "text": "One item cost me two separate debits; please investigate the billing.", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "test-003", "kind": "paraphrase", "text": "Can I settle the bill using a digital wallet?", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "test-004", "kind": "paraphrase", "text": "The funds were deducted but checkout said the transaction failed.", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "test-005", "kind": "paraphrase", "text": "I tapped pay once but my bank lists the purchase in duplicate.", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "test-006", "kind": "paraphrase", "text": "A single shopping trip has taken two bites out of my balance.", "acceptable_labels": ["PAYMENT"], "must_review": false}
+{"id": "test-007", "kind": "paraphrase", "text": "The returned shoes were accepted; where is the promised credit?", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "test-008", "kind": "paraphrase", "text": "Am I eligible to get my money back after opening the box?", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "test-009", "kind": "paraphrase", "text": "I sent the item back and want the purchase price repaid.", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "test-010", "kind": "paraphrase", "text": "What is the deadline for requesting reimbursement?", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "test-011", "kind": "paraphrase", "text": "The refund was approved last week but still has not arrived.", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "test-012", "kind": "paraphrase", "text": "Please reimburse the cost of this defective lamp.", "acceptable_labels": ["REFUND"], "must_review": false}
+{"id": "test-013", "kind": "paraphrase", "text": "The password recovery link never reaches my inbox.", "acceptable_labels": ["ACCOUNT"], "must_review": false}
+{"id": "test-014", "kind": "paraphrase", "text": "Erase my customer registration and its stored profile.", "acceptable_labels": ["ACCOUNT"], "must_review": false}
+{"id": "test-015", "kind": "paraphrase", "text": "I cannot finish creating a login because registration fails.", "acceptable_labels": ["ACCOUNT"], "must_review": false}
+{"id": "test-016", "kind": "paraphrase", "text": "I need to change the name on my profile.", "acceptable_labels": ["ACCOUNT"], "must_review": false}
+{"id": "test-017", "kind": "paraphrase", "text": "Remove the blender from my existing purchase.", "acceptable_labels": ["ORDER"], "must_review": false}
+{"id": "test-018", "kind": "paraphrase", "text": "Has the parcel from purchase number 7841 been dispatched?", "acceptable_labels": ["ORDER"], "must_review": false}
+{"id": "test-019", "kind": "paraphrase", "text": "Please abandon the purchase before it is processed.", "acceptable_labels": ["ORDER"], "must_review": false}
+{"id": "test-020", "kind": "paraphrase", "text": "I would like to buy three notebooks from your shop.", "acceptable_labels": ["ORDER"], "must_review": false}
+{"id": "test-021", "kind": "paraphrase", "text": "The parcel should go to apartment 8 rather than apartment 3.", "acceptable_labels": ["SHIPPING"], "must_review": false}
+{"id": "test-022", "kind": "paraphrase", "text": "My next purchases should use the new house address.", "acceptable_labels": ["SHIPPING"], "must_review": false}
+{"id": "test-023", "kind": "paraphrase", "text": "I entered the old postcode; please redirect the package.", "acceptable_labels": ["SHIPPING"], "must_review": false}
+{"id": "test-024", "kind": "paraphrase", "text": "How do I store a default destination for parcels?", "acceptable_labels": ["SHIPPING"], "must_review": false}
+{"id": "test-025", "kind": "paraphrase", "text": "Can you ship using an overnight courier service?", "acceptable_labels": ["DELIVERY"], "must_review": false}
+{"id": "test-026", "kind": "paraphrase", "text": "What is your standard transit time to rural areas?", "acceptable_labels": ["DELIVERY"], "must_review": false}
+{"id": "test-027", "kind": "paraphrase", "text": "Are there several courier speeds to choose from?", "acceptable_labels": ["DELIVERY"], "must_review": false}
+{"id": "test-028", "kind": "paraphrase", "text": "Will delivery typically take more than a week?", "acceptable_labels": ["DELIVERY"], "must_review": false}
+{"id": "test-029", "kind": "paraphrase", "text": "Please issue a tax invoice for the headphones.", "acceptable_labels": ["INVOICE"], "must_review": false}
+{"id": "test-030", "kind": "paraphrase", "text": "The VAT total printed on my bill looks incorrect.", "acceptable_labels": ["INVOICE"], "must_review": false}
+{"id": "test-031", "kind": "paraphrase", "text": "I need another copy of the purchase invoice for accounting.", "acceptable_labels": ["INVOICE"], "must_review": false}
+{"id": "test-032", "kind": "paraphrase", "text": "How do I inspect the itemized bill for my purchase?", "acceptable_labels": ["INVOICE"], "must_review": false}
+{"id": "test-033", "kind": "paraphrase", "text": "Please transfer this conversation to a human employee.", "acceptable_labels": ["CONTACT"], "must_review": false}
+{"id": "test-034", "kind": "paraphrase", "text": "Where is the telephone helpline for shoppers?", "acceptable_labels": ["CONTACT"], "must_review": false}
+{"id": "test-035", "kind": "paraphrase", "text": "Can a member of your customer service staff talk to me?", "acceptable_labels": ["CONTACT"], "must_review": false}
+{"id": "test-036", "kind": "paraphrase", "text": "I need the support departments contact details.", "acceptable_labels": ["CONTACT"], "must_review": false}
+{"id": "test-037", "kind": "paraphrase", "text": "I want to report how rudely I was treated by your staff.", "acceptable_labels": ["FEEDBACK"], "must_review": false}
+{"id": "test-038", "kind": "paraphrase", "text": "Your packaging was excellent and I would like to leave a rating.", "acceptable_labels": ["FEEDBACK"], "must_review": false}
+{"id": "test-039", "kind": "paraphrase", "text": "Here is a suggestion to improve the shopping experience.", "acceptable_labels": ["FEEDBACK"], "must_review": false}
+{"id": "test-040", "kind": "paraphrase", "text": "Where should I post my opinion about this product?", "acceptable_labels": ["FEEDBACK"], "must_review": false}
+{"id": "test-041", "kind": "paraphrase", "text": "Is there a financial penalty for withdrawing this purchase?", "acceptable_labels": ["CANCEL"], "must_review": false}
+{"id": "test-042", "kind": "paraphrase", "text": "Before stopping my purchase I want to know the cancellation cost.", "acceptable_labels": ["CANCEL"], "must_review": false}
+{"id": "test-043", "kind": "paraphrase", "text": "Do you deduct any money for a cancellation?", "acceptable_labels": ["CANCEL"], "must_review": false}
+{"id": "test-044", "kind": "paraphrase", "text": "How much will cancelling the reservation cost me?", "acceptable_labels": ["CANCEL"], "must_review": false}
+{"id": "test-045", "kind": "paraphrase", "text": "Please take my email off the promotional mailing list.", "acceptable_labels": ["SUBSCRIPTION"], "must_review": false}
+{"id": "test-046", "kind": "paraphrase", "text": "I want your weekly newsletter to arrive in my inbox.", "acceptable_labels": ["SUBSCRIPTION"], "must_review": false}
+{"id": "test-047", "kind": "paraphrase", "text": "The marketing bulletin should no longer be sent to me.", "acceptable_labels": ["SUBSCRIPTION"], "must_review": false}
+{"id": "test-048", "kind": "paraphrase", "text": "Where is the signup for your shop newsletter?", "acceptable_labels": ["SUBSCRIPTION"], "must_review": false}
+{"id": "test-049", "kind": "vague", "text": "This situation needs attention.", "acceptable_labels": [], "must_review": true}
+{"id": "test-050", "kind": "vague", "text": "I cannot figure out what to do next.", "acceptable_labels": [], "must_review": true}
+{"id": "test-051", "kind": "vague", "text": "Please investigate what happened yesterday.", "acceptable_labels": [], "must_review": true}
+{"id": "test-052", "kind": "vague", "text": "Your system is giving me trouble.", "acceptable_labels": [], "must_review": true}
+{"id": "test-053", "kind": "vague", "text": "I need somebody to sort everything out.", "acceptable_labels": [], "must_review": true}
+{"id": "test-054", "kind": "vague", "text": "There seems to be a mistake somewhere.", "acceptable_labels": [], "must_review": true}
+{"id": "test-055", "kind": "vague", "text": "I am stuck again.", "acceptable_labels": [], "must_review": true}
+{"id": "test-056", "kind": "vague", "text": "This has gone badly and I need a response.", "acceptable_labels": [], "must_review": true}
+{"id": "test-057", "kind": "vague", "text": "What should I do about this?", "acceptable_labels": [], "must_review": true}
+{"id": "test-058", "kind": "vague", "text": "It happened a second time.", "acceptable_labels": [], "must_review": true}
+{"id": "test-059", "kind": "vague", "text": "Can you explain why this is happening?", "acceptable_labels": [], "must_review": true}
+{"id": "test-060", "kind": "vague", "text": "Nothing seems right today.", "acceptable_labels": [], "must_review": true}
+{"id": "test-061", "kind": "mixed", "text": "My balance was debited twice and I also need my password reset.", "acceptable_labels": ["PAYMENT", "ACCOUNT"], "must_review": true}
+{"id": "test-062", "kind": "mixed", "text": "Fix the rejected card transaction and delete my customer profile.", "acceptable_labels": ["PAYMENT", "ACCOUNT"], "must_review": true}
+{"id": "test-063", "kind": "mixed", "text": "The shop took an extra debit; reverse it and investigate the payment failure.", "acceptable_labels": ["PAYMENT", "REFUND"], "must_review": true}
+{"id": "test-064", "kind": "mixed", "text": "I need to dispute the duplicate card charge and track an earlier refund.", "acceptable_labels": ["PAYMENT", "REFUND"], "must_review": true}
+{"id": "test-065", "kind": "mixed", "text": "Cancel the kettle purchase and stop the promotional bulletin.", "acceptable_labels": ["ORDER", "SUBSCRIPTION"], "must_review": true}
+{"id": "test-066", "kind": "mixed", "text": "Tell me where my parcel is and sign me up for store news.", "acceptable_labels": ["ORDER", "SUBSCRIPTION"], "must_review": true}
+{"id": "test-067", "kind": "mixed", "text": "Redirect my parcel to the hotel and tell me how long delivery takes.", "acceptable_labels": ["SHIPPING", "DELIVERY"], "must_review": true}
+{"id": "test-068", "kind": "mixed", "text": "Save the new address and explain your overnight courier choices.", "acceptable_labels": ["SHIPPING", "DELIVERY"], "must_review": true}
+{"id": "test-069", "kind": "mixed", "text": "Correct the tax invoice and help me regain access to my login.", "acceptable_labels": ["INVOICE", "ACCOUNT"], "must_review": true}
+{"id": "test-070", "kind": "mixed", "text": "Send the itemized bill and change my customer profile name.", "acceptable_labels": ["INVOICE", "ACCOUNT"], "must_review": true}
+{"id": "test-071", "kind": "mixed", "text": "Check my reimbursement status and record a complaint about the staff.", "acceptable_labels": ["REFUND", "FEEDBACK"], "must_review": true}
+{"id": "test-072", "kind": "mixed", "text": "Explain the refund deadline and show me where to leave a rating.", "acceptable_labels": ["REFUND", "FEEDBACK"], "must_review": true}
+{"id": "test-073", "kind": "out_of_scope", "text": "Generate a logo for my bakery.", "acceptable_labels": [], "must_review": true}
+{"id": "test-074", "kind": "out_of_scope", "text": "How do I repair a leaking tap?", "acceptable_labels": [], "must_review": true}
+{"id": "test-075", "kind": "out_of_scope", "text": "Explain quantum entanglement simply.", "acceptable_labels": [], "must_review": true}
+{"id": "test-076", "kind": "out_of_scope", "text": "My bicycle gears keep slipping.", "acceptable_labels": [], "must_review": true}
+{"id": "test-077", "kind": "out_of_scope", "text": "Find me a flight to Tokyo.", "acceptable_labels": [], "must_review": true}
+{"id": "test-078", "kind": "out_of_scope", "text": "Give me a workout plan.", "acceptable_labels": [], "must_review": true}
+{"id": "test-079", "kind": "out_of_scope", "text": "Can you summarize a novel?", "acceptable_labels": [], "must_review": true}
+{"id": "test-080", "kind": "out_of_scope", "text": "What is the population of Iceland?", "acceptable_labels": [], "must_review": true}
+{"id": "test-081", "kind": "out_of_scope", "text": "I need help with my algebra homework.", "acceptable_labels": [], "must_review": true}
+{"id": "test-082", "kind": "out_of_scope", "text": "Tell me a bedtime story.", "acceptable_labels": [], "must_review": true}
+{"id": "test-083", "kind": "out_of_scope", "text": "My refrigerator is making a loud noise.", "acceptable_labels": [], "must_review": true}
+{"id": "test-084", "kind": "out_of_scope", "text": "Suggest names for a new puppy.", "acceptable_labels": [], "must_review": true}
+{"id": "test-085", "kind": "out_of_scope", "text": "Which insurance policy should I choose?", "acceptable_labels": [], "must_review": true}
+{"id": "test-086", "kind": "out_of_scope", "text": "How do I renew my passport?", "acceptable_labels": [], "must_review": true}
+{"id": "test-087", "kind": "out_of_scope", "text": "Is this mushroom safe to eat?", "acceptable_labels": [], "must_review": true}
+{"id": "test-088", "kind": "out_of_scope", "text": "Can you compose a birthday song?", "acceptable_labels": [], "must_review": true}

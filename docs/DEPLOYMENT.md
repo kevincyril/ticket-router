@@ -1,0 +1,14 @@
+> Current release: see [ROBUSTNESS.md](ROBUSTNESS.md). Serving uses the balanced word/character candidate with automatic routing disabled. Earlier model-selection and routing measurements below describe the original release.
+
+# Deployment preparation
+
+Docker is not installed in the implementation environment, so the Compose stack is provided and statically checked but **was not built or executed here**. The actual API, PostgreSQL, Redis, worker, dispatcher and browser flow were run natively on Windows.
+
+1. Install Docker Engine/Desktop with Compose on your own host. Generate the baseline artifacts first using the README's locked training steps; the image intentionally never trains during build or startup. `artifacts/robustness/deployed/model.joblib` must exist in the build context. Joblib can execute code: only load artifacts produced by this trusted training workflow.
+2. `docker compose config` to inspect configuration, then `docker compose up --build -d`. The migration job runs before API/worker/dispatcher. Open `http://localhost:8000`; check `/api/health/ready`, then submit a synthetic example. Linux workers preload the baseline; the transformer is an offline comparison and is not included in the serving runtime.
+3. `docker compose logs -f api worker dispatcher` to inspect processing. `docker compose exec api python -c "from app.jobs import queue; print(queue().count)"` to inspect queue depth. Back up Postgres and protect the Redis volume. Repeated delivery is safe; Redis persistence does not replace database recovery.
+4. Stop with `docker compose down` (keeps volumes). Avoid `down -v` unless deliberately deleting demo data.
+
+For a future private deployment, use a single container host running these same processes before adding infrastructure. Set strong database credentials and restricted service networking; replace the demo Compose password. Add authentication and reviewer permissions before exposing the UI/API. Keep secrets outside images. Choose retention rules, backups, readiness and worker availability checks, TLS termination, rate limits, and monitoring. Run migrations as a separate release step. Test Linux worker timeout/recovery and browser flow on the target host because only Windows runtime was verified here. Do not interpret this preparation as a deployed production system.
+
+Model updates are manual: train offline, review evaluation artifacts, choose a model using validation/resource results, replace an immutable versioned artifact directory, restart workers, verify version metadata and submit a synthetic smoke test. Historical tickets retain their model version and routing snapshot. Reviews are candidates for a future manually curated dataset, not automatic training labels. No billing, cloud accounts, or public publishing is needed for local use.

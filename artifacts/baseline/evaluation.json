@@ -1,0 +1,1407 @@
+{
+  "status": "trained",
+  "metadata": {
+    "kind": "tfidf-logistic-regression",
+    "version": "baseline-5a5de5a6adf0",
+    "labels": [
+      "ACCOUNT",
+      "CANCEL",
+      "CONTACT",
+      "DELIVERY",
+      "FEEDBACK",
+      "INVOICE",
+      "ORDER",
+      "PAYMENT",
+      "REFUND",
+      "SHIPPING",
+      "SUBSCRIPTION"
+    ],
+    "threshold": 0.5,
+    "seed": 42,
+    "C": 2,
+    "data_sha256": "76a759ae696d6f4079cfddf9335a86b08ffd809b148f8c6355d1e89df5341e4f",
+    "split_sha256": "2fc2958e8c8cc61164b5f828120b9faf9b9e126a8c86830794caf1805fbd25b3",
+    "training_seconds": 5.884021000005305,
+    "artifact_bytes": 523492,
+    "command": "python -m ml.train_baseline",
+    "environment": {
+      "python": "3.12.16 (main, Oct 26 2026, 14:10:56) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+      "logical_cpus": 22,
+      "ram_gb": 15.46,
+      "packages": {
+        "numpy": "2.5.4",
+        "scikit-learn": "1.9.1",
+        "torch": "2.15.0",
+        "transformers": "4.57.6"
+      }
+    },
+    "evaluation_command": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 python -m ml.evaluate_saved"
+  },
+  "selection_trials": [
+    {
+      "C": 0.5,
+      "validation_macro_f1": 0.9947665017405871
+    },
+    {
+      "C": 2,
+      "validation_macro_f1": 0.9967936783865309
+    },
+    {
+      "C": 8,
+      "validation_macro_f1": 0.9967509368848432
+    }
+  ],
+  "threshold_policy": "Maximum validation coverage with confidence threshold >=0.50, >=98% empirical accepted accuracy, >=100 accepted samples; otherwise 1.0. Floor added after initial test reporting to support ambiguous demo requests; no thresholds optimized on test.",
+  "validation": {
+    "accuracy": 0.9968246767974598,
+    "macro_f1": 0.9967936783865309,
+    "per_class": {
+      "ACCOUNT": {
+        "precision": 0.9918864097363083,
+        "recall": 1.0,
+        "f1-score": 0.9959266802443992,
+        "support": 978.0
+      },
+      "CANCEL": {
+        "precision": 0.9819277108433735,
+        "recall": 1.0,
+        "f1-score": 0.9908814589665653,
+        "support": 163.0
+      },
+      "CONTACT": {
+        "precision": 1.0,
+        "recall": 0.997289972899729,
+        "f1-score": 0.9986431478968792,
+        "support": 369.0
+      },
+      "DELIVERY": {
+        "precision": 0.99079754601227,
+        "recall": 1.0,
+        "f1-score": 0.9953775038520801,
+        "support": 323.0
+      },
+      "FEEDBACK": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 398.0
+      },
+      "INVOICE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 8.0
+      },
+      "ORDER": {
+        "precision": 1.0,
+        "recall": 0.9900990099009901,
+        "f1-score": 0.9950248756218906,
+        "support": 303.0
+      },
+      "PAYMENT": {
+        "precision": 1.0,
+        "recall": 0.9848484848484849,
+        "f1-score": 0.9923664122137404,
+        "support": 396.0
+      },
+      "REFUND": {
+        "precision": 1.0,
+        "recall": 0.9941291585127201,
+        "f1-score": 0.9970559371933267,
+        "support": 511.0
+      },
+      "SHIPPING": {
+        "precision": 1.0,
+        "recall": 0.9989094874591058,
+        "f1-score": 0.9994544462629569,
+        "support": 917.0
+      },
+      "SUBSCRIPTION": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 43.0
+      },
+      "accuracy": 0.9968246767974598,
+      "macro avg": {
+        "precision": 0.9967828787810866,
+        "recall": 0.9968432830564573,
+        "f1-score": 0.9967936783865309,
+        "support": 4409.0
+      },
+      "weighted avg": {
+        "precision": 0.9968579571221462,
+        "recall": 0.9968246767974598,
+        "f1-score": 0.9968249430908909,
+        "support": 4409.0
+      }
+    },
+    "labels": [
+      "ACCOUNT",
+      "CANCEL",
+      "CONTACT",
+      "DELIVERY",
+      "FEEDBACK",
+      "INVOICE",
+      "ORDER",
+      "PAYMENT",
+      "REFUND",
+      "SHIPPING",
+      "SUBSCRIPTION"
+    ],
+    "confusion_matrix": [
+      [
+        978,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        163,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        368,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        323,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        398,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        300,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        390,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        508,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        916,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        43
+      ]
+    ],
+    "errors": [
+      {
+        "text": "need help to notify of problems with paymenst",
+        "actual": "PAYMENT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.7709424199317896
+      },
+      {
+        "text": "I want to inform of pamyent issues",
+        "actual": "PAYMENT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.6909618895886689
+      },
+      {
+        "text": "i do not know what to do to report an issue withpayment",
+        "actual": "PAYMENT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.6296969046725441
+      },
+      {
+        "text": "when can I expect a refund",
+        "actual": "REFUND",
+        "predicted": "DELIVERY",
+        "confidence": 0.5853659246867758
+      },
+      {
+        "text": "solve problems with apyment",
+        "actual": "PAYMENT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.5781002557333589
+      },
+      {
+        "text": "is it possible to see the available pyment options",
+        "actual": "PAYMENT",
+        "predicted": "DELIVERY",
+        "confidence": 0.47113331987245166
+      },
+      {
+        "text": "are the service charges refundable?",
+        "actual": "REFUND",
+        "predicted": "CANCEL",
+        "confidence": 0.46617409555617517
+      },
+      {
+        "text": "need to edit order113542617735902 how to do it",
+        "actual": "ORDER",
+        "predicted": "ACCOUNT",
+        "confidence": 0.39249040034193206
+      },
+      {
+        "text": "makepurchase",
+        "actual": "ORDER",
+        "predicted": "ACCOUNT",
+        "confidence": 0.31686260466971355
+      },
+      {
+        "text": "contactingassistant",
+        "actual": "CONTACT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.31686260466971355
+      },
+      {
+        "text": "is it possible to check the allowed paymentmodalities",
+        "actual": "PAYMENT",
+        "predicted": "CANCEL",
+        "confidence": 0.3142405147652226
+      },
+      {
+        "text": "i have to see the damn ETA of my delivery helpme",
+        "actual": "ORDER",
+        "predicted": "DELIVERY",
+        "confidence": 0.24693701858761757
+      }
+    ],
+    "calibration": {
+      "ece_10_bins": 0.05758070401189924,
+      "brier_multiclass": 0.01452956022629551,
+      "bins": [
+        {
+          "lower": 0.1,
+          "count": 1,
+          "accuracy": 0.0,
+          "confidence": 0.17609604179563398
+        },
+        {
+          "lower": 0.2,
+          "count": 4,
+          "accuracy": 0.5,
+          "confidence": 0.2566438331467083
+        },
+        {
+          "lower": 0.3,
+          "count": 16,
+          "accuracy": 0.75,
+          "confidence": 0.3445764305456061
+        },
+        {
+          "lower": 0.4,
+          "count": 16,
+          "accuracy": 0.875,
+          "confidence": 0.4541246960277765
+        },
+        {
+          "lower": 0.5,
+          "count": 33,
+          "accuracy": 0.9393939393939394,
+          "confidence": 0.5577780396292855
+        },
+        {
+          "lower": 0.6,
+          "count": 43,
+          "accuracy": 0.9534883720930233,
+          "confidence": 0.6546773955833117
+        },
+        {
+          "lower": 0.7,
+          "count": 130,
+          "accuracy": 0.9923076923076923,
+          "confidence": 0.7583199349921447
+        },
+        {
+          "lower": 0.8,
+          "count": 414,
+          "accuracy": 1.0,
+          "confidence": 0.8625096114725136
+        },
+        {
+          "lower": 0.9,
+          "count": 3752,
+          "accuracy": 1.0,
+          "confidence": 0.9662256409059495
+        }
+      ]
+    },
+    "coverage_curve": [
+      {
+        "threshold": 0.0,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9968246767974598,
+        "error": 0.0031753232025402145
+      },
+      {
+        "threshold": 0.025,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9968246767974598,
+        "error": 0.0031753232025402145
+      },
+      {
+        "threshold": 0.05,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9968246767974598,
+        "error": 0.0031753232025402145
+      },
+      {
+        "threshold": 0.075,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9968246767974598,
+        "error": 0.0031753232025402145
+      },
+      {
+        "threshold": 0.1,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9968246767974598,
+        "error": 0.0031753232025402145
+      },
+      {
+        "threshold": 0.125,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9968246767974598,
+        "error": 0.0031753232025402145
+      },
+      {
+        "threshold": 0.15,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9968246767974598,
+        "error": 0.0031753232025402145
+      },
+      {
+        "threshold": 0.175,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9968246767974598,
+        "error": 0.0031753232025402145
+      },
+      {
+        "threshold": 0.2,
+        "auto_routed": 4408,
+        "coverage": 0.9997731911998186,
+        "accuracy": 0.9970508166969148,
+        "error": 0.0029491833030852455
+      },
+      {
+        "threshold": 0.225,
+        "auto_routed": 4407,
+        "coverage": 0.9995463823996371,
+        "accuracy": 0.9972770592239619,
+        "error": 0.002722940776038074
+      },
+      {
+        "threshold": 0.25,
+        "auto_routed": 4406,
+        "coverage": 0.9993195735994557,
+        "accuracy": 0.9975034044484793,
+        "error": 0.0024965955515207083
+      },
+      {
+        "threshold": 0.275,
+        "auto_routed": 4406,
+        "coverage": 0.9993195735994557,
+        "accuracy": 0.9975034044484793,
+        "error": 0.0024965955515207083
+      },
+      {
+        "threshold": 0.3,
+        "auto_routed": 4404,
+        "coverage": 0.9988659559990928,
+        "accuracy": 0.9975022706630337,
+        "error": 0.002497729336966348
+      },
+      {
+        "threshold": 0.325,
+        "auto_routed": 4398,
+        "coverage": 0.9975051031980041,
+        "accuracy": 0.998180991359709,
+        "error": 0.0018190086402910532
+      },
+      {
+        "threshold": 0.35,
+        "auto_routed": 4395,
+        "coverage": 0.9968246767974598,
+        "accuracy": 0.9981797497155859,
+        "error": 0.0018202502844141266
+      },
+      {
+        "threshold": 0.375,
+        "auto_routed": 4391,
+        "coverage": 0.9959174415967339,
+        "accuracy": 0.9981780915508995,
+        "error": 0.0018219084491004622
+      },
+      {
+        "threshold": 0.4,
+        "auto_routed": 4388,
+        "coverage": 0.9952370151961896,
+        "accuracy": 0.9984047402005469,
+        "error": 0.0015952597994530748
+      },
+      {
+        "threshold": 0.425,
+        "auto_routed": 4384,
+        "coverage": 0.9943297799954638,
+        "accuracy": 0.9984032846715328,
+        "error": 0.0015967153284671687
+      },
+      {
+        "threshold": 0.45,
+        "auto_routed": 4383,
+        "coverage": 0.9941029711952823,
+        "accuracy": 0.9984029203741729,
+        "error": 0.0015970796258271136
+      },
+      {
+        "threshold": 0.475,
+        "auto_routed": 4375,
+        "coverage": 0.9922885007938308,
+        "accuracy": 0.9988571428571429,
+        "error": 0.0011428571428571122
+      },
+      {
+        "threshold": 0.5,
+        "auto_routed": 4372,
+        "coverage": 0.9916080743932865,
+        "accuracy": 0.9988563586459286,
+        "error": 0.0011436413540714119
+      },
+      {
+        "threshold": 0.525,
+        "auto_routed": 4367,
+        "coverage": 0.9904740303923792,
+        "accuracy": 0.998855049232883,
+        "error": 0.001144950767116959
+      },
+      {
+        "threshold": 0.55,
+        "auto_routed": 4361,
+        "coverage": 0.9891131775912906,
+        "accuracy": 0.9988534739738592,
+        "error": 0.0011465260261408483
+      },
+      {
+        "threshold": 0.575,
+        "auto_routed": 4351,
+        "coverage": 0.986845089589476,
+        "accuracy": 0.9988508388876121,
+        "error": 0.001149161112387942
+      },
+      {
+        "threshold": 0.6,
+        "auto_routed": 4339,
+        "coverage": 0.9841233839872987,
+        "accuracy": 0.9993085964507951,
+        "error": 0.0006914035492049386
+      },
+      {
+        "threshold": 0.625,
+        "auto_routed": 4331,
+        "coverage": 0.9823089135858472,
+        "accuracy": 0.9993073193257908,
+        "error": 0.0006926806742092451
+      },
+      {
+        "threshold": 0.65,
+        "auto_routed": 4320,
+        "coverage": 0.9798140167838512,
+        "accuracy": 0.999537037037037,
+        "error": 0.0004629629629629983
+      },
+      {
+        "threshold": 0.675,
+        "auto_routed": 4312,
+        "coverage": 0.9779995463823996,
+        "accuracy": 0.9995361781076066,
+        "error": 0.0004638218923933568
+      },
+      {
+        "threshold": 0.7,
+        "auto_routed": 4296,
+        "coverage": 0.9743706055794965,
+        "accuracy": 0.9997672253258846,
+        "error": 0.0002327746741154213
+      },
+      {
+        "threshold": 0.725,
+        "auto_routed": 4274,
+        "coverage": 0.9693808119755046,
+        "accuracy": 0.9997660271408516,
+        "error": 0.00023397285914839028
+      },
+      {
+        "threshold": 0.75,
+        "auto_routed": 4249,
+        "coverage": 0.9637105919709684,
+        "accuracy": 0.9997646505060014,
+        "error": 0.0002353494939986156
+      },
+      {
+        "threshold": 0.775,
+        "auto_routed": 4212,
+        "coverage": 0.9553186663642549,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.8,
+        "auto_routed": 4166,
+        "coverage": 0.9448854615559084,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.825,
+        "auto_routed": 4121,
+        "coverage": 0.9346790655477433,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.85,
+        "auto_routed": 4027,
+        "coverage": 0.9133590383306872,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.875,
+        "auto_routed": 3930,
+        "coverage": 0.8913585847130868,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.9,
+        "auto_routed": 3752,
+        "coverage": 0.8509866182807893,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.925,
+        "auto_routed": 3459,
+        "coverage": 0.7845316398276253,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "auto_routed": 2879,
+        "coverage": 0.6529825357223861,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.975,
+        "auto_routed": 1689,
+        "coverage": 0.38308006350646406,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 1.0,
+        "auto_routed": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "error": null
+      }
+    ],
+    "selected_threshold": 0.5,
+    "auto_coverage": 0.9916080743932865,
+    "auto_accuracy": 0.9988563586459286,
+    "count": 4409
+  },
+  "test": {
+    "accuracy": 0.9952584163110479,
+    "macro_f1": 0.9949808222812652,
+    "per_class": {
+      "ACCOUNT": {
+        "precision": 0.995483288166215,
+        "recall": 1.0,
+        "f1-score": 0.9977365323675872,
+        "support": 1102.0
+      },
+      "CANCEL": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 162.0
+      },
+      "CONTACT": {
+        "precision": 0.997275204359673,
+        "recall": 1.0,
+        "f1-score": 0.9986357435197817,
+        "support": 366.0
+      },
+      "DELIVERY": {
+        "precision": 1.0,
+        "recall": 0.934984520123839,
+        "f1-score": 0.9664,
+        "support": 323.0
+      },
+      "FEEDBACK": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 397.0
+      },
+      "INVOICE": {
+        "precision": 1.0,
+        "recall": 0.9971056439942113,
+        "f1-score": 0.9985507246376811,
+        "support": 1382.0
+      },
+      "ORDER": {
+        "precision": 0.98559670781893,
+        "recall": 1.0,
+        "f1-score": 0.9927461139896373,
+        "support": 1437.0
+      },
+      "PAYMENT": {
+        "precision": 1.0,
+        "recall": 0.9873737373737373,
+        "f1-score": 0.9936467598475223,
+        "support": 396.0
+      },
+      "REFUND": {
+        "precision": 0.9941634241245136,
+        "recall": 1.0,
+        "f1-score": 0.9970731707317073,
+        "support": 511.0
+      },
+      "SHIPPING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 218.0
+      },
+      "SUBSCRIPTION": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 33.0
+      },
+      "accuracy": 0.9952584163110479,
+      "macro avg": {
+        "precision": 0.9975016931335755,
+        "recall": 0.9926785364992535,
+        "f1-score": 0.9949808222812652,
+        "support": 6327.0
+      },
+      "weighted avg": {
+        "precision": 0.9953129899191144,
+        "recall": 0.9952584163110479,
+        "f1-score": 0.9952134210831717,
+        "support": 6327.0
+      }
+    },
+    "labels": [
+      "ACCOUNT",
+      "CANCEL",
+      "CONTACT",
+      "DELIVERY",
+      "FEEDBACK",
+      "INVOICE",
+      "ORDER",
+      "PAYMENT",
+      "REFUND",
+      "SHIPPING",
+      "SUBSCRIPTION"
+    ],
+    "confusion_matrix": [
+      [
+        1102,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        162,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        366,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        302,
+        0,
+        0,
+        21,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        397,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1378,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1437,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        391,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        511,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        218,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        33
+      ]
+    ],
+    "errors": [
+      {
+        "text": "need to report an issue with paymentr",
+        "actual": "PAYMENT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.7970423256838549
+      },
+      {
+        "text": "I am trying to inform of an error with paymenys",
+        "actual": "PAYMENT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.6921823867537177
+      },
+      {
+        "text": "need assistance reporting an issue with pyments",
+        "actual": "PAYMENT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.6857543567161999
+      },
+      {
+        "text": "can i place an order frim {{Delivery Country}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.6658579791877351
+      },
+      {
+        "text": "could I place an order from {{Delivery Country}} ?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.6607900178651022
+      },
+      {
+        "text": "can I place an order from {{Delivery City}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.6399329977955054
+      },
+      {
+        "text": "cn I place an order from {{Delivery City}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.6187748873705822
+      },
+      {
+        "text": "could Iplace an order from {{Delivery City}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.5940675093261026
+      },
+      {
+        "text": "is it possibleto place an order from {{Delivery City}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.5652382468501501
+      },
+      {
+        "text": "where can i report errors with onlinepayment",
+        "actual": "PAYMENT",
+        "predicted": "ACCOUNT",
+        "confidence": 0.5617728644268503
+      },
+      {
+        "text": "is it possible to place an order from {{Delivery City}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.5487186336654639
+      },
+      {
+        "text": "can I place a bloody order from {{Delivery City}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.4063864310230482
+      }
+    ],
+    "calibration": {
+      "ece_10_bins": 0.07628943648928535,
+      "brier_multiclass": 0.02466465025593807,
+      "bins": [
+        {
+          "lower": 0.1,
+          "count": 3,
+          "accuracy": 0.6666666666666666,
+          "confidence": 0.17273430113995145
+        },
+        {
+          "lower": 0.2,
+          "count": 17,
+          "accuracy": 0.8235294117647058,
+          "confidence": 0.2545107674098574
+        },
+        {
+          "lower": 0.3,
+          "count": 27,
+          "accuracy": 0.48148148148148145,
+          "confidence": 0.35644595366257936
+        },
+        {
+          "lower": 0.4,
+          "count": 45,
+          "accuracy": 0.9777777777777777,
+          "confidence": 0.4513882040958587
+        },
+        {
+          "lower": 0.5,
+          "count": 89,
+          "accuracy": 0.9550561797752809,
+          "confidence": 0.5561686266657749
+        },
+        {
+          "lower": 0.6,
+          "count": 209,
+          "accuracy": 0.9712918660287081,
+          "confidence": 0.6541266636811561
+        },
+        {
+          "lower": 0.7,
+          "count": 353,
+          "accuracy": 0.9971671388101983,
+          "confidence": 0.7530901163123869
+        },
+        {
+          "lower": 0.8,
+          "count": 696,
+          "accuracy": 1.0,
+          "confidence": 0.857556065115652
+        },
+        {
+          "lower": 0.9,
+          "count": 4888,
+          "accuracy": 1.0,
+          "confidence": 0.9678036060941733
+        }
+      ]
+    },
+    "coverage_curve": [
+      {
+        "threshold": 0.0,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9952584163110479,
+        "error": 0.004741583688952056
+      },
+      {
+        "threshold": 0.025,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9952584163110479,
+        "error": 0.004741583688952056
+      },
+      {
+        "threshold": 0.05,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9952584163110479,
+        "error": 0.004741583688952056
+      },
+      {
+        "threshold": 0.075,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9952584163110479,
+        "error": 0.004741583688952056
+      },
+      {
+        "threshold": 0.1,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9952584163110479,
+        "error": 0.004741583688952056
+      },
+      {
+        "threshold": 0.125,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9952584163110479,
+        "error": 0.004741583688952056
+      },
+      {
+        "threshold": 0.15,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9952584163110479,
+        "error": 0.004741583688952056
+      },
+      {
+        "threshold": 0.175,
+        "auto_routed": 6326,
+        "coverage": 0.9998419472103682,
+        "accuracy": 0.9954157445463168,
+        "error": 0.004584255453683239
+      },
+      {
+        "threshold": 0.2,
+        "auto_routed": 6324,
+        "coverage": 0.9995258416311048,
+        "accuracy": 0.9954142947501581,
+        "error": 0.00458570524984192
+      },
+      {
+        "threshold": 0.225,
+        "auto_routed": 6320,
+        "coverage": 0.9988936304725778,
+        "accuracy": 0.9954113924050633,
+        "error": 0.004588607594936733
+      },
+      {
+        "threshold": 0.25,
+        "auto_routed": 6317,
+        "coverage": 0.9984194721036826,
+        "accuracy": 0.9957258192179832,
+        "error": 0.004274180782016801
+      },
+      {
+        "threshold": 0.275,
+        "auto_routed": 6312,
+        "coverage": 0.9976292081555239,
+        "accuracy": 0.9958808618504436,
+        "error": 0.004119138149556445
+      },
+      {
+        "threshold": 0.3,
+        "auto_routed": 6307,
+        "coverage": 0.9968389442073653,
+        "accuracy": 0.9958775963215475,
+        "error": 0.004122403678452513
+      },
+      {
+        "threshold": 0.325,
+        "auto_routed": 6303,
+        "coverage": 0.9962067330488383,
+        "accuracy": 0.9960336347770903,
+        "error": 0.003966365222909718
+      },
+      {
+        "threshold": 0.35,
+        "auto_routed": 6296,
+        "coverage": 0.9951003635214162,
+        "accuracy": 0.9966645489199492,
+        "error": 0.003335451080050844
+      },
+      {
+        "threshold": 0.375,
+        "auto_routed": 6290,
+        "coverage": 0.9941520467836257,
+        "accuracy": 0.9972972972972973,
+        "error": 0.002702702702702675
+      },
+      {
+        "threshold": 0.4,
+        "auto_routed": 6280,
+        "coverage": 0.9925715188873083,
+        "accuracy": 0.9980891719745223,
+        "error": 0.0019108280254777066
+      },
+      {
+        "threshold": 0.425,
+        "auto_routed": 6270,
+        "coverage": 0.990990990990991,
+        "accuracy": 0.9982456140350877,
+        "error": 0.0017543859649122862
+      },
+      {
+        "threshold": 0.45,
+        "auto_routed": 6260,
+        "coverage": 0.9894104630946736,
+        "accuracy": 0.9982428115015974,
+        "error": 0.001757188498402562
+      },
+      {
+        "threshold": 0.475,
+        "auto_routed": 6246,
+        "coverage": 0.9871977240398293,
+        "accuracy": 0.9982388728786423,
+        "error": 0.0017611271213576751
+      },
+      {
+        "threshold": 0.5,
+        "auto_routed": 6235,
+        "coverage": 0.9854591433538802,
+        "accuracy": 0.9982357658380112,
+        "error": 0.001764234161988787
+      },
+      {
+        "threshold": 0.525,
+        "auto_routed": 6220,
+        "coverage": 0.9830883515094041,
+        "accuracy": 0.9982315112540193,
+        "error": 0.0017684887459806786
+      },
+      {
+        "threshold": 0.55,
+        "auto_routed": 6200,
+        "coverage": 0.9799272957167694,
+        "accuracy": 0.9983870967741936,
+        "error": 0.001612903225806428
+      },
+      {
+        "threshold": 0.575,
+        "auto_routed": 6173,
+        "coverage": 0.9756598703967125,
+        "accuracy": 0.998704033695124,
+        "error": 0.0012959663048760506
+      },
+      {
+        "threshold": 0.6,
+        "auto_routed": 6146,
+        "coverage": 0.9713924450766556,
+        "accuracy": 0.9988610478359908,
+        "error": 0.001138952164009166
+      },
+      {
+        "threshold": 0.625,
+        "auto_routed": 6106,
+        "coverage": 0.9650703334913862,
+        "accuracy": 0.9990173599737963,
+        "error": 0.0009826400262037405
+      },
+      {
+        "threshold": 0.65,
+        "auto_routed": 6059,
+        "coverage": 0.9576418523786945,
+        "accuracy": 0.9991747813170491,
+        "error": 0.0008252186829509345
+      },
+      {
+        "threshold": 0.675,
+        "auto_routed": 5998,
+        "coverage": 0.9480006322111585,
+        "accuracy": 0.9994998332777593,
+        "error": 0.0005001667222407358
+      },
+      {
+        "threshold": 0.7,
+        "auto_routed": 5937,
+        "coverage": 0.9383594120436226,
+        "accuracy": 0.9998315647633484,
+        "error": 0.00016843523665155402
+      },
+      {
+        "threshold": 0.725,
+        "auto_routed": 5862,
+        "coverage": 0.9265054528212423,
+        "accuracy": 0.9998294097577619,
+        "error": 0.00017059024223808894
+      },
+      {
+        "threshold": 0.75,
+        "auto_routed": 5778,
+        "coverage": 0.9132290184921764,
+        "accuracy": 0.9998269297334718,
+        "error": 0.0001730702665282413
+      },
+      {
+        "threshold": 0.775,
+        "auto_routed": 5677,
+        "coverage": 0.8972656867393709,
+        "accuracy": 0.9998238506253303,
+        "error": 0.0001761493746696985
+      },
+      {
+        "threshold": 0.8,
+        "auto_routed": 5584,
+        "coverage": 0.8825667773036194,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.825,
+        "auto_routed": 5455,
+        "coverage": 0.8621779674411253,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.85,
+        "auto_routed": 5316,
+        "coverage": 0.8402086296823139,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.875,
+        "auto_routed": 5140,
+        "coverage": 0.8123913387071282,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.9,
+        "auto_routed": 4888,
+        "coverage": 0.7725620357199304,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.925,
+        "auto_routed": 4458,
+        "coverage": 0.7045993361782835,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "auto_routed": 3747,
+        "coverage": 0.5922238027501185,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 0.975,
+        "auto_routed": 2383,
+        "coverage": 0.3766397976924293,
+        "accuracy": 1.0,
+        "error": 0.0
+      },
+      {
+        "threshold": 1.0,
+        "auto_routed": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "error": null
+      }
+    ],
+    "selected_threshold": 0.5,
+    "auto_coverage": 0.9854591433538802,
+    "auto_accuracy": 0.9982357658380112,
+    "count": 6327
+  },
+  "latency": {
+    "samples": 100,
+    "batch_size": 1,
+    "median_ms": 0.5988000193610787,
+    "p95_ms": 0.7499050028854981,
+    "serial_throughput_per_second": 1615.263596779479,
+    "protocol": "Warm CPU serial batch-one, 5 warmups +100 timed; no training concurrent; baseline BLAS threads2, transformer torch threads4"
+  },
+  "process_rss_mb": 203.5546875,
+  "evaluation_process_rss_mb": 452.4765625
+}

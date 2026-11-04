@@ -1,0 +1,20 @@
+{
+  "purpose": "Small author-created behavioral challenge, not production accuracy or independently annotated evaluation.",
+  "label_policy": "Single supported intent => listed category. Vague, unrelated, or multiple actionable intents => must review, even if one category is plausible. PAYMENT is billing/payment issues; REFUND is repayment request/policy/status. Returns is invented team name, not dataset label.",
+  "development_cases_excluded": [
+    "Money left my account two times for one purchase.",
+    "Something is wrong. Please help.",
+    "I was charged twice for the same order. Can you refund the extra payment?"
+  ],
+  "splits": {
+    "validation": {
+      "sha256": "0fde5c4021ed53e5a112c300ac5ed99dfb63c0861c59c07990878e2f8867b5d5",
+      "count": 65
+    },
+    "test": {
+      "sha256": "047c9f9a3857534caa99d34720bd2327be153146ef604dc4a08d991703872ed4",
+      "count": 88
+    }
+  },
+  "protocol": "Freeze both sets before scoring. Fit classifier on existing Bitext train only; calibrate on part of original validation; select routing gates/model using remaining validation and challenge validation only. Score challenge test only after policy/model selection artifacts are frozen. Do not tune further after test."
+}

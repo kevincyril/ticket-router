@@ -1,0 +1,31 @@
+{
+  "training_file_sha256": "76a759ae696d6f4079cfddf9335a86b08ffd809b148f8c6355d1e89df5341e4f",
+  "retained_training_rows": 12883,
+  "calibration_rows": 1647,
+  "development_examples_found_in_training": [],
+  "challenge_manifest_sha256": "cac8f3f606c87be69f194ecad03de7c4317e876b5c5f23558482df2e592e2f2c",
+  "selection_still_matches_pretest_bundle": true,
+  "train_only_fit_examples_per_label": {
+    "PAYMENT": [
+      "I try to list your available payment methoids",
+      "see ur payment methods",
+      "I have got to list the allowed payment modalities, help me",
+      "need assikstance checking your allowed payment modalities",
+      "how to see the allowed payment modalities?"
+    ],
+    "REFUND": [
+      "help me check your money bck guarantee",
+      "can I check in what cases can I ask to be reimbursed?",
+      "could you show me in what situations can I ask for refunds?",
+      "I try to check in which cases can I ask to be reimbursed",
+      "help me see in what cases can I ask to be reimbursed"
+    ],
+    "ACCOUNT": [
+      "how to open a different fucking {{Account Type}} account for my father?",
+      "i have a problem with creating a freemium account",
+      "need assistance creating a freemium account",
+      "where can I get information about opening {{Account Category}} accounts?",
+      "how can i get information about creating a {{Account Type}} account"
+    ]
+  }
+}

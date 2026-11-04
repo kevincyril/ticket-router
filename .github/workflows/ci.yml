@@ -1,0 +1,33 @@
+﻿name: checks
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env: {POSTGRES_USER: router, POSTGRES_PASSWORD: router, POSTGRES_DB: router_test}
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U router"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports: ['6379:6379']
+    env:
+      TEST_DATABASE_URL: postgresql+psycopg://router:router@localhost:5432/router_test
+      DATABASE_URL: postgresql+psycopg://router:router@localhost:5432/router_test
+      REDIS_URL: redis://localhost:6379/15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with: {version: '0.13.7'}
+      - run: uv sync --frozen
+      - run: uv run alembic upgrade head
+      - run: uv run pytest -m 'not browser' --cov=app --cov=ml.evaluate
+      - uses: actions/setup-node@v4
+        with: {node-version: '22', cache: npm, cache-dependency-path: frontend/package-lock.json}
+      - run: npm ci
+        working-directory: frontend
+      - run: npm run build
+        working-directory: frontend

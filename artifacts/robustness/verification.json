@@ -1,0 +1,18 @@
+{
+  "backend": "31 passed,1 browser deselected",
+  "backend_seconds": 5.74,
+  "browser": "1 passed; uniquely submitted ticket, actual queued inference, review reasons, saved decision, robustness report and mobile overflow",
+  "browser_seconds": 7.99,
+  "frontend": "TypeScript and Vite production build passed",
+  "migration": "002 applied to real application PostgreSQL; fixture database reset/migrated before tests",
+  "operational_mode": "AUTO_ROUTING_ENABLED=false; services left running for user review",
+  "model_version": "robust-378279f9c844-56b3746d",
+  "actual_development_queue_results": "artifacts/robustness/live-smoke.json",
+  "thresholds_unchanged_after_test": true,
+  "limits": [
+    "Docker/Compose not executed",
+    "Remote GitHub Actions not executed",
+    "Frozen small author-created challenge lacks independent annotation",
+    "No model demonstrated reliable automatic routing"
+  ]
+}

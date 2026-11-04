@@ -1,0 +1,19 @@
+{
+  "kind": "balanced-word-char-logistic-regression",
+  "training_seconds": 1.3725004000007175,
+  "labels": [
+    "ACCOUNT",
+    "CANCEL",
+    "CONTACT",
+    "DELIVERY",
+    "FEEDBACK",
+    "INVOICE",
+    "ORDER",
+    "PAYMENT",
+    "REFUND",
+    "SHIPPING",
+    "SUBSCRIPTION"
+  ],
+  "training_only": true,
+  "no_user_examples_or_challenge_texts_in_training": true
+}

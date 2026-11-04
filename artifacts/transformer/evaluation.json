@@ -1,0 +1,1316 @@
+{
+  "status": "trained",
+  "metadata": {
+    "kind": "pretrained-bert-finetuned",
+    "version": "transformer-7a51fe67b60a",
+    "base_model": "google/bert_uncased_L-2_H-128_A-2",
+    "base_revision": "30b0a37ccaaa32f332884b96992754e246e48c5f",
+    "base_license": "Apache-2.0",
+    "labels": [
+      "ACCOUNT",
+      "CANCEL",
+      "CONTACT",
+      "DELIVERY",
+      "FEEDBACK",
+      "INVOICE",
+      "ORDER",
+      "PAYMENT",
+      "REFUND",
+      "SHIPPING",
+      "SUBSCRIPTION"
+    ],
+    "threshold": 0.5,
+    "seed": 42,
+    "epochs": 3,
+    "learning_rate": 0.0005,
+    "max_length": 64,
+    "batch_size": 64,
+    "data_sha256": "76a759ae696d6f4079cfddf9335a86b08ffd809b148f8c6355d1e89df5341e4f",
+    "split_sha256": "2fc2958e8c8cc61164b5f828120b9faf9b9e126a8c86830794caf1805fbd25b3",
+    "training_seconds": 282.0985662000021,
+    "artifact_bytes": 18499775,
+    "command": "python -m ml.train_transformer",
+    "device": "cpu",
+    "torch_threads": 4,
+    "environment": {
+      "python": "3.12.16 (main, Oct 26 2026, 14:10:56) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+      "logical_cpus": 22,
+      "ram_gb": 15.46,
+      "packages": {
+        "numpy": "2.5.4",
+        "scikit-learn": "1.9.1",
+        "torch": "2.15.0",
+        "transformers": "4.57.6"
+      }
+    },
+    "evaluation_command": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 python -m ml.evaluate_saved"
+  },
+  "selection_trials": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5308756380777354,
+      "validation_macro_f1": 0.9976416435870998
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.01888076078037103,
+      "validation_macro_f1": 0.9928998320751652
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.008309213841087619,
+      "validation_macro_f1": 0.9991892367858445
+    }
+  ],
+  "validation": {
+    "accuracy": 0.9993195735994557,
+    "macro_f1": 0.9991892367858445,
+    "per_class": {
+      "ACCOUNT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 978.0
+      },
+      "CANCEL": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 163.0
+      },
+      "CONTACT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 369.0
+      },
+      "DELIVERY": {
+        "precision": 0.9938461538461538,
+        "recall": 1.0,
+        "f1-score": 0.9969135802469136,
+        "support": 323.0
+      },
+      "FEEDBACK": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 398.0
+      },
+      "INVOICE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 8.0
+      },
+      "ORDER": {
+        "precision": 0.9966996699669967,
+        "recall": 0.9966996699669967,
+        "f1-score": 0.9966996699669967,
+        "support": 303.0
+      },
+      "PAYMENT": {
+        "precision": 1.0,
+        "recall": 0.9949494949494949,
+        "f1-score": 0.9974683544303797,
+        "support": 396.0
+      },
+      "REFUND": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 511.0
+      },
+      "SHIPPING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 917.0
+      },
+      "SUBSCRIPTION": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 43.0
+      },
+      "accuracy": 0.9993195735994557,
+      "macro avg": {
+        "precision": 0.9991405294375592,
+        "recall": 0.9992408331742265,
+        "f1-score": 0.9991892367858445,
+        "support": 4409.0
+      },
+      "weighted avg": {
+        "precision": 0.9993223650923811,
+        "recall": 0.9993195735994557,
+        "f1-score": 0.9993196994271227,
+        "support": 4409.0
+      }
+    },
+    "labels": [
+      "ACCOUNT",
+      "CANCEL",
+      "CONTACT",
+      "DELIVERY",
+      "FEEDBACK",
+      "INVOICE",
+      "ORDER",
+      "PAYMENT",
+      "REFUND",
+      "SHIPPING",
+      "SUBSCRIPTION"
+    ],
+    "confusion_matrix": [
+      [
+        978,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        163,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        369,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        323,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        398,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        302,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        394,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        511,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        917,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        43
+      ]
+    ],
+    "errors": [
+      {
+        "text": "i have to see the damn ETA of my delivery helpme",
+        "actual": "ORDER",
+        "predicted": "DELIVERY",
+        "confidence": 0.9941514134407043
+      },
+      {
+        "text": "I want to inform of pamyent issues",
+        "actual": "PAYMENT",
+        "predicted": "ORDER",
+        "confidence": 0.9478799700737
+      },
+      {
+        "text": "i get an error when i try to make a transfer report it",
+        "actual": "PAYMENT",
+        "predicted": "DELIVERY",
+        "confidence": 0.712431788444519
+      }
+    ],
+    "calibration": {
+      "ece_10_bins": 0.0026719552855774026,
+      "brier_multiclass": 0.0013442573547196033,
+      "bins": [
+        {
+          "lower": 0.4,
+          "count": 1,
+          "accuracy": 1.0,
+          "confidence": 0.4921565651893616
+        },
+        {
+          "lower": 0.6,
+          "count": 2,
+          "accuracy": 1.0,
+          "confidence": 0.6567239165306091
+        },
+        {
+          "lower": 0.7,
+          "count": 1,
+          "accuracy": 0.0,
+          "confidence": 0.712431788444519
+        },
+        {
+          "lower": 0.8,
+          "count": 3,
+          "accuracy": 1.0,
+          "confidence": 0.8588081002235413
+        },
+        {
+          "lower": 0.9,
+          "count": 4402,
+          "accuracy": 0.9995456610631531,
+          "confidence": 0.997398853302002
+        }
+      ]
+    },
+    "coverage_curve": [
+      {
+        "threshold": 0.0,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.025,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.05,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.075,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.1,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.125,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.15,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.175,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.2,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.225,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.25,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.275,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.3,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.325,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.35,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.375,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.4,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.425,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.45,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.475,
+        "auto_routed": 4409,
+        "coverage": 1.0,
+        "accuracy": 0.9993195735994557,
+        "error": 0.0006804264005443317
+      },
+      {
+        "threshold": 0.5,
+        "auto_routed": 4408,
+        "coverage": 0.9997731911998186,
+        "accuracy": 0.9993194192377496,
+        "error": 0.0006805807622504156
+      },
+      {
+        "threshold": 0.525,
+        "auto_routed": 4408,
+        "coverage": 0.9997731911998186,
+        "accuracy": 0.9993194192377496,
+        "error": 0.0006805807622504156
+      },
+      {
+        "threshold": 0.55,
+        "auto_routed": 4408,
+        "coverage": 0.9997731911998186,
+        "accuracy": 0.9993194192377496,
+        "error": 0.0006805807622504156
+      },
+      {
+        "threshold": 0.575,
+        "auto_routed": 4408,
+        "coverage": 0.9997731911998186,
+        "accuracy": 0.9993194192377496,
+        "error": 0.0006805807622504156
+      },
+      {
+        "threshold": 0.6,
+        "auto_routed": 4408,
+        "coverage": 0.9997731911998186,
+        "accuracy": 0.9993194192377496,
+        "error": 0.0006805807622504156
+      },
+      {
+        "threshold": 0.625,
+        "auto_routed": 4407,
+        "coverage": 0.9995463823996371,
+        "accuracy": 0.9993192648059904,
+        "error": 0.000680735194009574
+      },
+      {
+        "threshold": 0.65,
+        "auto_routed": 4407,
+        "coverage": 0.9995463823996371,
+        "accuracy": 0.9993192648059904,
+        "error": 0.000680735194009574
+      },
+      {
+        "threshold": 0.675,
+        "auto_routed": 4407,
+        "coverage": 0.9995463823996371,
+        "accuracy": 0.9993192648059904,
+        "error": 0.000680735194009574
+      },
+      {
+        "threshold": 0.7,
+        "auto_routed": 4406,
+        "coverage": 0.9993195735994557,
+        "accuracy": 0.9993191103041307,
+        "error": 0.0006808896958693245
+      },
+      {
+        "threshold": 0.725,
+        "auto_routed": 4405,
+        "coverage": 0.9990927647992742,
+        "accuracy": 0.9995459704880817,
+        "error": 0.000454029511918308
+      },
+      {
+        "threshold": 0.75,
+        "auto_routed": 4405,
+        "coverage": 0.9990927647992742,
+        "accuracy": 0.9995459704880817,
+        "error": 0.000454029511918308
+      },
+      {
+        "threshold": 0.775,
+        "auto_routed": 4405,
+        "coverage": 0.9990927647992742,
+        "accuracy": 0.9995459704880817,
+        "error": 0.000454029511918308
+      },
+      {
+        "threshold": 0.8,
+        "auto_routed": 4405,
+        "coverage": 0.9990927647992742,
+        "accuracy": 0.9995459704880817,
+        "error": 0.000454029511918308
+      },
+      {
+        "threshold": 0.825,
+        "auto_routed": 4404,
+        "coverage": 0.9988659559990928,
+        "accuracy": 0.9995458673932789,
+        "error": 0.0004541326067211138
+      },
+      {
+        "threshold": 0.85,
+        "auto_routed": 4404,
+        "coverage": 0.9988659559990928,
+        "accuracy": 0.9995458673932789,
+        "error": 0.0004541326067211138
+      },
+      {
+        "threshold": 0.875,
+        "auto_routed": 4403,
+        "coverage": 0.9986391471989113,
+        "accuracy": 0.9995457642516467,
+        "error": 0.0004542357483533488
+      },
+      {
+        "threshold": 0.9,
+        "auto_routed": 4402,
+        "coverage": 0.9984123383987299,
+        "accuracy": 0.9995456610631531,
+        "error": 0.00045433893684687643
+      },
+      {
+        "threshold": 0.925,
+        "auto_routed": 4402,
+        "coverage": 0.9984123383987299,
+        "accuracy": 0.9995456610631531,
+        "error": 0.00045433893684687643
+      },
+      {
+        "threshold": 0.95,
+        "auto_routed": 4399,
+        "coverage": 0.9977319119981856,
+        "accuracy": 0.9997726756080928,
+        "error": 0.0002273243919072021
+      },
+      {
+        "threshold": 0.975,
+        "auto_routed": 4393,
+        "coverage": 0.9963710591970969,
+        "accuracy": 0.9997723651263374,
+        "error": 0.0002276348736626188
+      },
+      {
+        "threshold": 1.0,
+        "auto_routed": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "error": null
+      }
+    ],
+    "selected_threshold": 0.5,
+    "auto_coverage": 0.9997731911998186,
+    "auto_accuracy": 0.9993194192377496,
+    "count": 4409
+  },
+  "test": {
+    "accuracy": 0.9949423107317844,
+    "macro_f1": 0.9928017700230107,
+    "per_class": {
+      "ACCOUNT": {
+        "precision": 0.99909338168631,
+        "recall": 1.0,
+        "f1-score": 0.999546485260771,
+        "support": 1102.0
+      },
+      "CANCEL": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 162.0
+      },
+      "CONTACT": {
+        "precision": 0.9972677595628415,
+        "recall": 0.9972677595628415,
+        "f1-score": 0.9972677595628415,
+        "support": 366.0
+      },
+      "DELIVERY": {
+        "precision": 0.9966329966329966,
+        "recall": 0.9164086687306502,
+        "f1-score": 0.9548387096774194,
+        "support": 323.0
+      },
+      "FEEDBACK": {
+        "precision": 1.0,
+        "recall": 0.9974811083123426,
+        "f1-score": 0.9987389659520807,
+        "support": 397.0
+      },
+      "INVOICE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1382.0
+      },
+      "ORDER": {
+        "precision": 0.9808873720136518,
+        "recall": 1.0,
+        "f1-score": 0.9903514817367333,
+        "support": 1437.0
+      },
+      "PAYMENT": {
+        "precision": 0.9974811083123426,
+        "recall": 1.0,
+        "f1-score": 0.9987389659520807,
+        "support": 396.0
+      },
+      "REFUND": {
+        "precision": 1.0,
+        "recall": 0.9980430528375733,
+        "f1-score": 0.9990205680705191,
+        "support": 511.0
+      },
+      "SHIPPING": {
+        "precision": 1.0,
+        "recall": 0.9954128440366973,
+        "f1-score": 0.9977011494252873,
+        "support": 218.0
+      },
+      "SUBSCRIPTION": {
+        "precision": 1.0,
+        "recall": 0.9696969696969697,
+        "f1-score": 0.9846153846153847,
+        "support": 33.0
+      },
+      "accuracy": 0.9949423107317844,
+      "macro avg": {
+        "precision": 0.9973966016552858,
+        "recall": 0.9885736730160976,
+        "f1-score": 0.9928017700230107,
+        "support": 6327.0
+      },
+      "weighted avg": {
+        "precision": 0.9950135983888221,
+        "recall": 0.9949423107317844,
+        "f1-score": 0.9948694290801195,
+        "support": 6327.0
+      }
+    },
+    "labels": [
+      "ACCOUNT",
+      "CANCEL",
+      "CONTACT",
+      "DELIVERY",
+      "FEEDBACK",
+      "INVOICE",
+      "ORDER",
+      "PAYMENT",
+      "REFUND",
+      "SHIPPING",
+      "SUBSCRIPTION"
+    ],
+    "confusion_matrix": [
+      [
+        1102,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        162,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        365,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        296,
+        0,
+        0,
+        27,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        396,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1382,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1437,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        396,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        510,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        217,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        32
+      ]
+    ],
+    "errors": [
+      {
+        "text": "would it be possibl to place a goddamn order from {{Delivery Country}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9977205395698547
+      },
+      {
+        "text": "can i place a damn order from  {{Delivery Country}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976832866668701
+      },
+      {
+        "text": "could I place a damn order from {{Delivery Country}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976810216903687
+      },
+      {
+        "text": "can I place a bloody order from {{Delivery City}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.997669517993927
+      },
+      {
+        "text": "would it be possible to place a fucking order from {{Delivery City}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976691603660583
+      },
+      {
+        "text": "can i place a  fucking order from {{Delivery City}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976678490638733
+      },
+      {
+        "text": "is it possible to place a goddamn order from {{Delivery Country}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976551532745361
+      },
+      {
+        "text": "would it be possible toplace a fucking order from {{Delivery City}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976512789726257
+      },
+      {
+        "text": "is it possible to place a damn order from {{Delivery Country}}?",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976447224617004
+      },
+      {
+        "text": "is it possible to place a bloody order from {{Delivery City}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976412057876587
+      },
+      {
+        "text": "is it possible to place na order from {{Delivery Country}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976406097412109
+      },
+      {
+        "text": "can i place an order frim {{Delivery Country}}",
+        "actual": "DELIVERY",
+        "predicted": "ORDER",
+        "confidence": 0.9976363182067871
+      }
+    ],
+    "calibration": {
+      "ece_10_bins": 0.0008095432292497663,
+      "brier_multiclass": 0.009697723643410445,
+      "bins": [
+        {
+          "lower": 0.5,
+          "count": 1,
+          "accuracy": 0.0,
+          "confidence": 0.5843110680580139
+        },
+        {
+          "lower": 0.6,
+          "count": 4,
+          "accuracy": 0.75,
+          "confidence": 0.6325728893280029
+        },
+        {
+          "lower": 0.7,
+          "count": 4,
+          "accuracy": 0.5,
+          "confidence": 0.7383032441139221
+        },
+        {
+          "lower": 0.8,
+          "count": 2,
+          "accuracy": 1.0,
+          "confidence": 0.8806227445602417
+        },
+        {
+          "lower": 0.9,
+          "count": 6316,
+          "accuracy": 0.9955668144395187,
+          "confidence": 0.9960221648216248
+        }
+      ]
+    },
+    "coverage_curve": [
+      {
+        "threshold": 0.0,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.025,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.05,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.075,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.1,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.125,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.15,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.175,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.2,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.225,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.25,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.275,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.3,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.325,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.35,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.375,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.4,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.425,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.45,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.475,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.5,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.525,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.55,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.575,
+        "auto_routed": 6327,
+        "coverage": 1.0,
+        "accuracy": 0.9949423107317844,
+        "error": 0.005057689268215593
+      },
+      {
+        "threshold": 0.6,
+        "auto_routed": 6326,
+        "coverage": 0.9998419472103682,
+        "accuracy": 0.9950995889977869,
+        "error": 0.0049004110022130565
+      },
+      {
+        "threshold": 0.625,
+        "auto_routed": 6323,
+        "coverage": 0.999367788841473,
+        "accuracy": 0.9952554167325637,
+        "error": 0.00474458326743632
+      },
+      {
+        "threshold": 0.65,
+        "auto_routed": 6323,
+        "coverage": 0.999367788841473,
+        "accuracy": 0.9952554167325637,
+        "error": 0.00474458326743632
+      },
+      {
+        "threshold": 0.675,
+        "auto_routed": 6323,
+        "coverage": 0.999367788841473,
+        "accuracy": 0.9952554167325637,
+        "error": 0.00474458326743632
+      },
+      {
+        "threshold": 0.7,
+        "auto_routed": 6322,
+        "coverage": 0.9992097360518413,
+        "accuracy": 0.9952546662448593,
+        "error": 0.004745333755140746
+      },
+      {
+        "threshold": 0.725,
+        "auto_routed": 6321,
+        "coverage": 0.9990516832622096,
+        "accuracy": 0.9952539155196962,
+        "error": 0.0047460844803037805
+      },
+      {
+        "threshold": 0.75,
+        "auto_routed": 6319,
+        "coverage": 0.9987355776829461,
+        "accuracy": 0.995410666244659,
+        "error": 0.004589333755340985
+      },
+      {
+        "threshold": 0.775,
+        "auto_routed": 6318,
+        "coverage": 0.9985775248933144,
+        "accuracy": 0.99556821779044,
+        "error": 0.004431782209559976
+      },
+      {
+        "threshold": 0.8,
+        "auto_routed": 6318,
+        "coverage": 0.9985775248933144,
+        "accuracy": 0.99556821779044,
+        "error": 0.004431782209559976
+      },
+      {
+        "threshold": 0.825,
+        "auto_routed": 6318,
+        "coverage": 0.9985775248933144,
+        "accuracy": 0.99556821779044,
+        "error": 0.004431782209559976
+      },
+      {
+        "threshold": 0.85,
+        "auto_routed": 6318,
+        "coverage": 0.9985775248933144,
+        "accuracy": 0.99556821779044,
+        "error": 0.004431782209559976
+      },
+      {
+        "threshold": 0.875,
+        "auto_routed": 6318,
+        "coverage": 0.9985775248933144,
+        "accuracy": 0.99556821779044,
+        "error": 0.004431782209559976
+      },
+      {
+        "threshold": 0.9,
+        "auto_routed": 6316,
+        "coverage": 0.9982614193140509,
+        "accuracy": 0.9955668144395187,
+        "error": 0.004433185560481334
+      },
+      {
+        "threshold": 0.925,
+        "auto_routed": 6315,
+        "coverage": 0.9981033665244191,
+        "accuracy": 0.9957244655581948,
+        "error": 0.004275534441805173
+      },
+      {
+        "threshold": 0.95,
+        "auto_routed": 6310,
+        "coverage": 0.9973131025762605,
+        "accuracy": 0.9957210776545167,
+        "error": 0.004278922345483327
+      },
+      {
+        "threshold": 0.975,
+        "auto_routed": 6300,
+        "coverage": 0.9957325746799431,
+        "accuracy": 0.9957142857142857,
+        "error": 0.004285714285714337
+      },
+      {
+        "threshold": 1.0,
+        "auto_routed": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "error": null
+      }
+    ],
+    "selected_threshold": 0.5,
+    "auto_coverage": 1.0,
+    "auto_accuracy": 0.9949423107317844,
+    "count": 6327
+  },
+  "latency": {
+    "samples": 100,
+    "batch_size": 1,
+    "median_ms": 4.28769999416545,
+    "p95_ms": 5.731480024405754,
+    "serial_throughput_per_second": 224.36505848535472,
+    "protocol": "Warm CPU serial batch-one, 5 warmups +100 timed; no training concurrent; baseline BLAS threads2, transformer torch threads4"
+  },
+  "process_rss_mb": 783.4765625,
+  "threshold_policy": "Maximum validation coverage with confidence threshold >=0.50, >=98% empirical accepted accuracy, >=100 accepted samples; otherwise 1.0. Floor added after initial test reporting to support ambiguous demo requests; no thresholds optimized on test.",
+  "evaluation_process_rss_mb": 481.5234375
+}

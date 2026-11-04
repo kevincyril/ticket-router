@@ -1,0 +1,379 @@
+{
+  "class_counts": {
+    "test": {
+      "ACCOUNT": 1102,
+      "CANCEL": 162,
+      "CONTACT": 366,
+      "DELIVERY": 323,
+      "FEEDBACK": 397,
+      "INVOICE": 1382,
+      "ORDER": 1437,
+      "PAYMENT": 396,
+      "REFUND": 511,
+      "SHIPPING": 218,
+      "SUBSCRIPTION": 33
+    },
+    "train": {
+      "ACCOUNT": 2996,
+      "CANCEL": 604,
+      "CONTACT": 1209,
+      "DELIVERY": 972,
+      "FEEDBACK": 1194,
+      "INVOICE": 208,
+      "ORDER": 1260,
+      "PAYMENT": 1188,
+      "REFUND": 1533,
+      "SHIPPING": 813,
+      "SUBSCRIPTION": 906
+    },
+    "validation": {
+      "ACCOUNT": 978,
+      "CANCEL": 163,
+      "CONTACT": 369,
+      "DELIVERY": 323,
+      "FEEDBACK": 398,
+      "INVOICE": 8,
+      "ORDER": 303,
+      "PAYMENT": 396,
+      "REFUND": 511,
+      "SHIPPING": 917,
+      "SUBSCRIPTION": 43
+    }
+  },
+  "raw_class_counts": {
+    "ACCOUNT": 5986,
+    "CANCEL": 950,
+    "CONTACT": 1999,
+    "DELIVERY": 1994,
+    "FEEDBACK": 1997,
+    "INVOICE": 1999,
+    "ORDER": 3988,
+    "PAYMENT": 1998,
+    "REFUND": 2992,
+    "SHIPPING": 1970,
+    "SUBSCRIPTION": 999
+  },
+  "raw_intent_counts": "{('ACCOUNT', 'create_account'): 997, ('ACCOUNT', 'delete_account'): 995, ('ACCOUNT', 'edit_account'): 1000, ('ACCOUNT', 'recover_password'): 995, ('ACCOUNT', 'registration_problems'): 999, ('ACCOUNT', 'switch_account'): 1000, ('CANCEL', 'check_cancellation_fee'): 950, ('CONTACT', 'contact_customer_service'): 1000, ('CONTACT', 'contact_human_agent'): 999, ('DELIVERY', 'delivery_options'): 995, ('DELIVERY', 'delivery_period'): 999, ('FEEDBACK', 'complaint'): 1000, ('FEEDBACK', 'review'): 997, ('INVOICE', 'check_invoice'): 1000, ('INVOICE', 'get_invoice'): 999, ('ORDER', 'cancel_order'): 998, ('ORDER', 'change_order'): 997, ('ORDER', 'place_order'): 998, ('ORDER', 'track_order'): 995, ('PAYMENT', 'check_payment_methods'): 999, ('PAYMENT', 'payment_issue'): 999, ('REFUND', 'check_refund_policy'): 997, ('REFUND', 'get_refund'): 997, ('REFUND', 'track_refund'): 998, ('SHIPPING', 'change_shipping_address'): 973, ('SHIPPING', 'set_up_shipping_address'): 997, ('SUBSCRIPTION', 'newsletter_subscription'): 999}",
+  "taxonomy": {
+    "ACCOUNT": [
+      "create_account",
+      "delete_account",
+      "edit_account",
+      "recover_password",
+      "registration_problems",
+      "switch_account"
+    ],
+    "CANCEL": [
+      "check_cancellation_fee"
+    ],
+    "CONTACT": [
+      "contact_customer_service",
+      "contact_human_agent"
+    ],
+    "DELIVERY": [
+      "delivery_options",
+      "delivery_period"
+    ],
+    "FEEDBACK": [
+      "complaint",
+      "review"
+    ],
+    "INVOICE": [
+      "check_invoice",
+      "get_invoice"
+    ],
+    "ORDER": [
+      "cancel_order",
+      "change_order",
+      "place_order",
+      "track_order"
+    ],
+    "PAYMENT": [
+      "check_payment_methods",
+      "payment_issue"
+    ],
+    "REFUND": [
+      "check_refund_policy",
+      "get_refund",
+      "track_refund"
+    ],
+    "SHIPPING": [
+      "change_shipping_address",
+      "set_up_shipping_address"
+    ],
+    "SUBSCRIPTION": [
+      "newsletter_subscription"
+    ]
+  },
+  "train_keyword_counts": {
+    "account": {
+      "ACCOUNT": 1398
+    },
+    "money": {
+      "REFUND": 379
+    },
+    "twice": {
+      "ORDER": 1
+    },
+    "charged": {
+      "CANCEL": 1
+    },
+    "purchase": {
+      "DELIVERY": 22,
+      "INVOICE": 9,
+      "ORDER": 269,
+      "REFUND": 11
+    },
+    "wrong": {
+      "REFUND": 18,
+      "SHIPPING": 32
+    }
+  },
+  "development_feature_attribution": [
+    {
+      "text": "Money left my account two times for one purchase.",
+      "unseen_features": [
+        "account two",
+        "for one",
+        "left",
+        "left my",
+        "money left",
+        "one purchase",
+        "times",
+        "times for",
+        "two",
+        "two times"
+      ],
+      "class_evidence": [
+        {
+          "label": "ACCOUNT",
+          "intercept": 1.4929332781015718,
+          "contributions": [
+            {
+              "feature": "account",
+              "logit_contribution": 2.447462934309801
+            },
+            {
+              "feature": "my",
+              "logit_contribution": 0.7211456991731878
+            },
+            {
+              "feature": "my account",
+              "logit_contribution": 0.6182739960552752
+            },
+            {
+              "feature": "one",
+              "logit_contribution": 0.11355008675600778
+            }
+          ]
+        },
+        {
+          "label": "PAYMENT",
+          "intercept": -0.26753088677226555,
+          "contributions": []
+        },
+        {
+          "label": "REFUND",
+          "intercept": 0.5717923458525511,
+          "contributions": [
+            {
+              "feature": "money",
+              "logit_contribution": 1.923743066880342
+            },
+            {
+              "feature": "for",
+              "logit_contribution": 0.31606229735975183
+            },
+            {
+              "feature": "my",
+              "logit_contribution": 0.0385168300891695
+            }
+          ]
+        },
+        {
+          "label": "ORDER",
+          "intercept": 0.48084200609559574,
+          "contributions": [
+            {
+              "feature": "purchase",
+              "logit_contribution": 2.0760824020218243
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Something is wrong. Please help.",
+      "unseen_features": [
+        "is wrong",
+        "please",
+        "please help",
+        "something is",
+        "wrong please"
+      ],
+      "class_evidence": [
+        {
+          "label": "ACCOUNT",
+          "intercept": 1.4929332781015718,
+          "contributions": []
+        },
+        {
+          "label": "PAYMENT",
+          "intercept": -0.26753088677226555,
+          "contributions": [
+            {
+              "feature": "help",
+              "logit_contribution": 0.08612120775810932
+            }
+          ]
+        },
+        {
+          "label": "REFUND",
+          "intercept": 0.5717923458525511,
+          "contributions": [
+            {
+              "feature": "wrong",
+              "logit_contribution": 0.2711891923322533
+            },
+            {
+              "feature": "help",
+              "logit_contribution": 0.09280836692390704
+            },
+            {
+              "feature": "is",
+              "logit_contribution": 0.057656383542812786
+            }
+          ]
+        },
+        {
+          "label": "ORDER",
+          "intercept": 0.48084200609559574,
+          "contributions": [
+            {
+              "feature": "something",
+              "logit_contribution": 2.36812868180042
+            },
+            {
+              "feature": "help",
+              "logit_contribution": 0.12354094640289676
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "I was charged twice for the same order. Can you refund the extra payment?",
+      "unseen_features": [
+        "charged",
+        "charged twice",
+        "extra",
+        "extra payment",
+        "refund the",
+        "same",
+        "same order",
+        "the extra",
+        "the same",
+        "twice",
+        "twice for",
+        "was charged",
+        "you refund"
+      ],
+      "class_evidence": [
+        {
+          "label": "ACCOUNT",
+          "intercept": 1.4929332781015718,
+          "contributions": [
+            {
+              "feature": "can you",
+              "logit_contribution": 0.016231860871260054
+            }
+          ]
+        },
+        {
+          "label": "PAYMENT",
+          "intercept": -0.26753088677226555,
+          "contributions": [
+            {
+              "feature": "payment",
+              "logit_contribution": 2.6976722604043495
+            },
+            {
+              "feature": "was",
+              "logit_contribution": 0.05095675433667188
+            },
+            {
+              "feature": "you",
+              "logit_contribution": 0.03872778703829279
+            },
+            {
+              "feature": "can",
+              "logit_contribution": 0.02390416369128811
+            },
+            {
+              "feature": "can you",
+              "logit_contribution": 0.0021189561351376354
+            }
+          ]
+        },
+        {
+          "label": "REFUND",
+          "intercept": 0.5717923458525511,
+          "contributions": [
+            {
+              "feature": "refund",
+              "logit_contribution": 1.745562870606061
+            },
+            {
+              "feature": "for",
+              "logit_contribution": 0.24308421445541323
+            },
+            {
+              "feature": "was",
+              "logit_contribution": 0.08087307918957709
+            },
+            {
+              "feature": "can",
+              "logit_contribution": 0.02908058172167008
+            },
+            {
+              "feature": "can you",
+              "logit_contribution": 0.009011625812819465
+            }
+          ]
+        },
+        {
+          "label": "ORDER",
+          "intercept": 0.48084200609559574,
+          "contributions": [
+            {
+              "feature": "order",
+              "logit_contribution": 1.9327165330046376
+            },
+            {
+              "feature": "order can",
+              "logit_contribution": 0.10888639232815057
+            },
+            {
+              "feature": "can you",
+              "logit_contribution": 0.0691886715787732
+            },
+            {
+              "feature": "you",
+              "logit_contribution": 0.011640880726722978
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "baseline_parameters": {
+    "C": 2,
+    "class_weight": null,
+    "ngrams": [
+      1,
+      2
+    ],
+    "vocabulary_size": 4054
+  },
+  "label_limitations": "No vague/OOD/multi-intent target; all source instructions have one category. ACCOUNT means customer login/profile, not a bank balance. REFUND covers requests/policy/status; Returns is an invented team, not a class."
+}

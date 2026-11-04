@@ -1,0 +1,13 @@
+{
+  "ACCOUNT": "Account Care",
+  "CONTACT": "Customer Care",
+  "DELIVERY": "Fulfillment",
+  "FEEDBACK": "Customer Care",
+  "INVOICE": "Billing",
+  "ORDER": "Order Operations",
+  "PAYMENT": "Billing",
+  "REFUND": "Returns",
+  "CANCEL": "Order Operations",
+  "SHIPPING": "Fulfillment",
+  "SUBSCRIPTION": "Account Care"
+}

@@ -1,0 +1,57 @@
+name: relay
+x-app: &app
+  build: .
+  environment: &env
+    DATABASE_URL: postgresql+psycopg://router:router@postgres:5432/router
+    REDIS_URL: redis://redis:6379/0
+    MODEL_DIR: artifacts/robustness/deployed
+    AUTO_ROUTING_ENABLED: "false"
+  depends_on:
+    migrate: {condition: service_completed_successfully}
+    redis: {condition: service_healthy}
+  restart: unless-stopped
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: router
+      POSTGRES_PASSWORD: router
+      POSTGRES_DB: router
+    volumes: [postgres-data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U router]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+  redis:
+    image: redis:7-alpine
+    command: [redis-server, --appendonly, 'yes']
+    volumes: [redis-data:/data]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+  migrate:
+    build: .
+    environment: *env
+    command: [alembic, upgrade, head]
+    depends_on:
+      postgres: {condition: service_healthy}
+  api:
+    <<: *app
+    ports: ['127.0.0.1:8000:8000']
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health/ready')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  dispatcher:
+    <<: *app
+    command: [python, -m, app.jobs]
+  worker:
+    <<: *app
+    command: [python, -m, app.worker]
+volumes:
+  postgres-data:
+  redis-data:

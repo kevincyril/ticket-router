@@ -1,0 +1,59 @@
+{
+  "seed": 42,
+  "raw_sha256": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434",
+  "prepared_sha256": "76a759ae696d6f4079cfddf9335a86b08ffd809b148f8c6355d1e89df5341e4f",
+  "source": {
+    "provider": "Bitext",
+    "repository": "https://github.com/bitext/customer-support-llm-chatbot-training-dataset",
+    "revision": "72ea2203180d14a416b579c657033ecd21e59a11",
+    "file": "data/Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+    "sha256": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434",
+    "license": "CDLA-Sharing-1.0"
+  },
+  "dedup": "NFKC lowercase punctuation/slot normalization; exclude label conflicts; deduplicate exact; connected components of char 3-5 cosine >= .85",
+  "raw_count": 26872,
+  "retained": 23619,
+  "groups": 7127,
+  "largest_group": 3953,
+  "counts": {
+    "test": {
+      "ACCOUNT": 1102,
+      "CANCEL": 162,
+      "CONTACT": 366,
+      "DELIVERY": 323,
+      "FEEDBACK": 397,
+      "INVOICE": 1382,
+      "ORDER": 1437,
+      "PAYMENT": 396,
+      "REFUND": 511,
+      "SHIPPING": 218,
+      "SUBSCRIPTION": 33
+    },
+    "train": {
+      "ACCOUNT": 2996,
+      "CANCEL": 604,
+      "CONTACT": 1209,
+      "DELIVERY": 972,
+      "FEEDBACK": 1194,
+      "INVOICE": 208,
+      "ORDER": 1260,
+      "PAYMENT": 1188,
+      "REFUND": 1533,
+      "SHIPPING": 813,
+      "SUBSCRIPTION": 906
+    },
+    "validation": {
+      "ACCOUNT": 978,
+      "CANCEL": 163,
+      "CONTACT": 369,
+      "DELIVERY": 323,
+      "FEEDBACK": 398,
+      "INVOICE": 8,
+      "ORDER": 303,
+      "PAYMENT": 396,
+      "REFUND": 511,
+      "SHIPPING": 917,
+      "SUBSCRIPTION": 43
+    }
+  }
+}

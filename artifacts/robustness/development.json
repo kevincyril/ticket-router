@@ -1,0 +1,56 @@
+{
+  "note": "User cases are development only, never independent evaluation.",
+  "models": {
+    "baseline": [
+      {
+        "text": "Money left my account two times for one purchase.",
+        "predicted": "ACCOUNT",
+        "confidence": 0.831337067482619
+      },
+      {
+        "text": "Something is wrong. Please help.",
+        "predicted": "ORDER",
+        "confidence": 0.6000989803623207
+      },
+      {
+        "text": "I was charged twice for the same order. Can you refund the extra payment?",
+        "predicted": "PAYMENT",
+        "confidence": 0.346755717490093
+      }
+    ],
+    "improved": [
+      {
+        "text": "Money left my account two times for one purchase.",
+        "predicted": "ACCOUNT",
+        "confidence": 0.6954432664588516
+      },
+      {
+        "text": "Something is wrong. Please help.",
+        "predicted": "ORDER",
+        "confidence": 0.7286064644421821
+      },
+      {
+        "text": "I was charged twice for the same order. Can you refund the extra payment?",
+        "predicted": "PAYMENT",
+        "confidence": 0.47599838269377165
+      }
+    ],
+    "transformer": [
+      {
+        "text": "Money left my account two times for one purchase.",
+        "predicted": "ACCOUNT",
+        "confidence": 0.9982950091362
+      },
+      {
+        "text": "Something is wrong. Please help.",
+        "predicted": "ORDER",
+        "confidence": 0.9882363677024841
+      },
+      {
+        "text": "I was charged twice for the same order. Can you refund the extra payment?",
+        "predicted": "REFUND",
+        "confidence": 0.9804829359054565
+      }
+    ]
+  }
+}

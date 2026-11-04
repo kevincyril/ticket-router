@@ -1,0 +1,336 @@
+{
+  "selected": "improved",
+  "candidates": {
+    "baseline": {
+      "temperature": 0.5000063322577876,
+      "policy": {
+        "confidence": 0.995,
+        "similarity": 0.4,
+        "margin": 0,
+        "require_neighbor_agreement": true,
+        "clause_min_similarity": 0.35
+      },
+      "challenge_validation": {
+        "count": 65,
+        "auto_routed": 6,
+        "auto_coverage": 0.09230769230769231,
+        "auto_accuracy": 1.0,
+        "manual_review_rate": 0.9076923076923077,
+        "confident_misrouting_count": 0,
+        "confident_misrouting_rate": 0.0,
+        "high_confidence_wrong_count": 15,
+        "required_review_recall": 1.0,
+        "clear_category_accuracy": 0.696969696969697
+      },
+      "source_validation_coverage": 0.9033309196234612,
+      "source_validation_auto_accuracy": 1.0,
+      "source_policy_validation_macro_f1": 0.9964508872241987,
+      "calibration_before": {
+        "ece_10_bins": 0.06292940888092094,
+        "brier_multiclass": 0.016186856625053654,
+        "bins": [
+          {
+            "lower": 0.2,
+            "count": 2,
+            "accuracy": 0.5,
+            "confidence": 0.2499609900751684
+          },
+          {
+            "lower": 0.3,
+            "count": 4,
+            "accuracy": 1.0,
+            "confidence": 0.3370792550047722
+          },
+          {
+            "lower": 0.4,
+            "count": 9,
+            "accuracy": 0.7777777777777778,
+            "confidence": 0.4606834587287246
+          },
+          {
+            "lower": 0.5,
+            "count": 14,
+            "accuracy": 0.9285714285714286,
+            "confidence": 0.5575735486831045
+          },
+          {
+            "lower": 0.6,
+            "count": 20,
+            "accuracy": 1.0,
+            "confidence": 0.6529841206107737
+          },
+          {
+            "lower": 0.7,
+            "count": 60,
+            "accuracy": 0.9833333333333333,
+            "confidence": 0.7583052870013933
+          },
+          {
+            "lower": 0.8,
+            "count": 179,
+            "accuracy": 1.0,
+            "confidence": 0.8631181808688615
+          },
+          {
+            "lower": 0.9,
+            "count": 1359,
+            "accuracy": 1.0,
+            "confidence": 0.9650468651618885
+          }
+        ]
+      },
+      "calibration_after": {
+        "ece_10_bins": 0.004027916543955035,
+        "brier_multiclass": 0.00519784186142336,
+        "bins": [
+          {
+            "lower": 0.3,
+            "count": 1,
+            "accuracy": 0.0,
+            "confidence": 0.32030611060777653
+          },
+          {
+            "lower": 0.5,
+            "count": 3,
+            "accuracy": 1.0,
+            "confidence": 0.5601369508684858
+          },
+          {
+            "lower": 0.6,
+            "count": 2,
+            "accuracy": 1.0,
+            "confidence": 0.6703680891155996
+          },
+          {
+            "lower": 0.7,
+            "count": 4,
+            "accuracy": 0.5,
+            "confidence": 0.7547844598063697
+          },
+          {
+            "lower": 0.8,
+            "count": 11,
+            "accuracy": 0.9090909090909091,
+            "confidence": 0.8513744031686031
+          },
+          {
+            "lower": 0.9,
+            "count": 1626,
+            "accuracy": 0.9993849938499385,
+            "confidence": 0.9977362853236458
+          }
+        ]
+      },
+      "raw_validation_challenge": {
+        "count": 65,
+        "auto_routed": 29,
+        "auto_coverage": 0.4461538461538462,
+        "auto_accuracy": 0.5517241379310345,
+        "manual_review_rate": 0.5538461538461539,
+        "confident_misrouting_count": 13,
+        "confident_misrouting_rate": 0.2,
+        "high_confidence_wrong_count": 5,
+        "required_review_recall": 0.6875,
+        "clear_category_accuracy": 0.696969696969697
+      }
+    },
+    "improved": {
+      "temperature": 0.5000059392867954,
+      "policy": {
+        "confidence": 0.65,
+        "similarity": 0.4,
+        "margin": 0,
+        "require_neighbor_agreement": true,
+        "clause_min_similarity": 0.35
+      },
+      "challenge_validation": {
+        "count": 65,
+        "auto_routed": 16,
+        "auto_coverage": 0.24615384615384617,
+        "auto_accuracy": 1.0,
+        "manual_review_rate": 0.7538461538461538,
+        "confident_misrouting_count": 0,
+        "confident_misrouting_rate": 0.0,
+        "high_confidence_wrong_count": 10,
+        "required_review_recall": 1.0,
+        "clear_category_accuracy": 0.7878787878787878
+      },
+      "source_validation_coverage": 0.9587255611875453,
+      "source_validation_auto_accuracy": 0.9996223564954683,
+      "source_policy_validation_macro_f1": 0.998921688169488,
+      "calibration_before": {
+        "ece_10_bins": 0.030933384278908585,
+        "brier_multiclass": 0.003944226459463935,
+        "bins": [
+          {
+            "lower": 0.4,
+            "count": 2,
+            "accuracy": 1.0,
+            "confidence": 0.4497514631689712
+          },
+          {
+            "lower": 0.5,
+            "count": 2,
+            "accuracy": 0.5,
+            "confidence": 0.5405848187809105
+          },
+          {
+            "lower": 0.6,
+            "count": 4,
+            "accuracy": 1.0,
+            "confidence": 0.6805123288391309
+          },
+          {
+            "lower": 0.7,
+            "count": 13,
+            "accuracy": 1.0,
+            "confidence": 0.7408446998294841
+          },
+          {
+            "lower": 0.8,
+            "count": 72,
+            "accuracy": 1.0,
+            "confidence": 0.8621530104507333
+          },
+          {
+            "lower": 0.9,
+            "count": 1554,
+            "accuracy": 1.0,
+            "confidence": 0.9773528543360803
+          }
+        ]
+      },
+      "calibration_after": {
+        "ece_10_bins": 0.0009783838268025923,
+        "brier_multiclass": 0.0007911904520054986,
+        "bins": [
+          {
+            "lower": 0.5,
+            "count": 2,
+            "accuracy": 0.5,
+            "confidence": 0.5620281749495766
+          },
+          {
+            "lower": 0.6,
+            "count": 1,
+            "accuracy": 1.0,
+            "confidence": 0.6841394323834445
+          },
+          {
+            "lower": 0.8,
+            "count": 1,
+            "accuracy": 1.0,
+            "confidence": 0.8833034530182957
+          },
+          {
+            "lower": 0.9,
+            "count": 1643,
+            "accuracy": 1.0,
+            "confidence": 0.9993580129651574
+          }
+        ]
+      },
+      "raw_validation_challenge": {
+        "count": 65,
+        "auto_routed": 35,
+        "auto_coverage": 0.5384615384615384,
+        "auto_accuracy": 0.6571428571428571,
+        "manual_review_rate": 0.46153846153846156,
+        "confident_misrouting_count": 12,
+        "confident_misrouting_rate": 0.18461538461538463,
+        "high_confidence_wrong_count": 1,
+        "required_review_recall": 0.6875,
+        "clear_category_accuracy": 0.7878787878787878
+      }
+    },
+    "transformer": {
+      "temperature": 0.5000065373515225,
+      "policy": {
+        "confidence": 0.5,
+        "similarity": 0.4,
+        "margin": 0,
+        "require_neighbor_agreement": true,
+        "clause_min_similarity": 0.35
+      },
+      "challenge_validation": {
+        "count": 65,
+        "auto_routed": 15,
+        "auto_coverage": 0.23076923076923078,
+        "auto_accuracy": 1.0,
+        "manual_review_rate": 0.7692307692307693,
+        "confident_misrouting_count": 0,
+        "confident_misrouting_rate": 0.0,
+        "high_confidence_wrong_count": 37,
+        "required_review_recall": 1.0,
+        "clear_category_accuracy": 0.7272727272727273
+      },
+      "source_validation_coverage": 0.9580014482259233,
+      "source_validation_auto_accuracy": 1.0,
+      "source_policy_validation_macro_f1": 0.998043827804769,
+      "calibration_before": {
+        "ece_10_bins": 0.0028776511251383573,
+        "brier_multiclass": 0.00030111274909221705,
+        "bins": [
+          {
+            "lower": 0.4,
+            "count": 1,
+            "accuracy": 1.0,
+            "confidence": 0.4921565651893616
+          },
+          {
+            "lower": 0.9,
+            "count": 1646,
+            "accuracy": 1.0,
+            "confidence": 0.9974291324615479
+          }
+        ]
+      },
+      "calibration_after": {
+        "ece_10_bins": 0.0002855030999591876,
+        "brier_multiclass": 0.0002604272623513565,
+        "bins": [
+          {
+            "lower": 0.5,
+            "count": 1,
+            "accuracy": 1.0,
+            "confidence": 0.5358591675758362
+          },
+          {
+            "lower": 0.9,
+            "count": 1646,
+            "accuracy": 1.0,
+            "confidence": 0.9999963045120239
+          }
+        ]
+      },
+      "raw_validation_challenge": {
+        "count": 65,
+        "auto_routed": 64,
+        "auto_coverage": 0.9846153846153847,
+        "auto_accuracy": 0.375,
+        "manual_review_rate": 0.015384615384615385,
+        "confident_misrouting_count": 40,
+        "confident_misrouting_rate": 0.6153846153846154,
+        "high_confidence_wrong_count": 26,
+        "required_review_recall": 0.03125,
+        "clear_category_accuracy": 0.7272727272727273
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12.16 (main, Oct 26 2026, 14:10:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "logical_cpus": 22,
+    "ram_gb": 15.46,
+    "packages": {
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "torch": "2.15.0",
+      "transformers": "4.57.6"
+    }
+  },
+  "command": "python -m ml.robustness_select",
+  "selection_frozen_before_test": true,
+  "challenge_manifest_sha256": "cac8f3f606c87be69f194ecad03de7c4317e876b5c5f23558482df2e592e2f2c"
+}

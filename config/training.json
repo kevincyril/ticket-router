@@ -1,0 +1,16 @@
+{
+  "seed": 42,
+  "dataset_revision": "72ea2203180d14a416b579c657033ecd21e59a11",
+  "transformer_model": "google/bert_uncased_L-2_H-128_A-2",
+  "transformer_revision": "30b0a37ccaaa32f332884b96992754e246e48c5f",
+  "transformer_epochs": 3,
+  "transformer_learning_rate": 0.0005,
+  "max_length": 64,
+  "baseline_C_candidates": [
+    0.5,
+    2,
+    8
+  ],
+  "confidence_floor": 0.5,
+  "validation_accepted_accuracy_target": 0.98
+}
