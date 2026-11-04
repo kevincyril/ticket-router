@@ -1,0 +1,5 @@
+# Frozen evaluation artifacts record SHA-256 of exact file bytes.
+# Preserve those bytes across Windows/Linux checkouts.
+data/challenge/** -text
+artifacts/** -text
+docs/DATA_LICENSE.txt -text
