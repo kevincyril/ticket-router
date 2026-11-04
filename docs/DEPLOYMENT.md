@@ -1,4 +1,4 @@
-﻿# Free Render demo deployment
+# Free Render demo deployment
 
 The repository contains `render.yaml` and an immutable trained-model bundle for a **temporary, free-only synthetic demo**. No paid worker, disk, database plan, or upgraded compute is requested. Hosting has not been created until the Render account is connected and the Blueprint is applied.
 
@@ -47,3 +47,7 @@ uv run python scripts/model_bundle.py pack
 Review the manifest/version, commit the trusted bundle, pass CI, then explicitly deploy on Render. Preserve review-first mode until a new representative validation/test study justifies automatic routing. No feedback-driven retraining occurs.
 
 For local development, `scripts/start-local.ps1` remains available. Compose still runs the separate API/worker/dispatcher processes and datastores; its container image now obtains model files from the committed verified bundle.
+
+## Prepared-image verification
+
+GitHub Actions run https://github.com/kevincyril/ticket-router/actions/runs/41769007112 passed: dependency lock, migrations, backend tests, TypeScript/Vite build, Docker build,512MB runtime and actual Linux-worker queued inference/review. Local backend verification passes39 tests. A separate Chromium flow checks the synthetic-only public interface and disabled review-note controls. These checks verify the deployment artifact; no Render deployment or live hosted URL is claimed before account authorization.

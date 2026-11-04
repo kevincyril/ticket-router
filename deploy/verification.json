@@ -1,0 +1,20 @@
+{
+  "image_ci": "https://github.com/kevincyril/ticket-router/actions/runs/41769007112",
+  "image_commit": "10e825a",
+  "result": "success",
+  "runtime_memory_limit_mb": 512,
+  "backend_local_tests": 39,
+  "public_browser": "synthetic-only example selection, actual asynchronous inference and persisted review; free text and notes disabled",
+  "hosting_status": "awaiting Render account connection; no hosting resources created",
+  "requested_plans": [
+    "free web",
+    "free Postgres",
+    "free Key Value"
+  ],
+  "known_limits": [
+    "idle sleep",
+    "30-day Postgres expiration",
+    "in-memory Redis",
+    "shared synthetic sandbox capped at500 tickets"
+  ]
+}

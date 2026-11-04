@@ -95,11 +95,11 @@ docker compose config
 docker compose up --build -d
 ```
 
-Compose targets PostgreSQL17 and Redis7. **Docker is unavailable here**, so the image build, Compose runtime and Linux fork-worker path are unverified. Native PostgreSQL/Redis, API, dispatcher, worker, migrations and browser flow have run successfully. GitHub Actions is prepared but has not been run remotely. No resources were provisioned and nothing was published. See [deployment notes](docs/DEPLOYMENT.md) and [architecture](docs/ARCHITECTURE.md), with historical sections identified.
+Compose targets PostgreSQL17 and Redis7. **Docker is unavailable on the local Windows host.** GitHub Actions now builds the image and verifies real queued inference with a Linux RQ worker under a512MB memory limit. Compose startup itself remains unverified. Native PostgreSQL/Redis, API, dispatcher, worker, migrations and browser flow have run successfully. No resources were provisioned and nothing was published. See [deployment notes](docs/DEPLOYMENT.md) and [architecture](docs/ARCHITECTURE.md), with historical sections identified.
 
 ## Tests
 
-The updated suite passes **31 backend/unit/reliability checks plus one Chromium flow**. It includes confidence-without-support rejection, calibration limitations, clause conflict, offline/serving policy agreement, frozen evaluation integrity, migration startup, manual-mode override of high confidence, real-model development-case review, idempotency races, retries, fencing, queue outages and restart recovery. Development-case regressions are not independent evaluation. Browser checks include review explanations, the robustness table, saved human decisions and mobile overflow.
+The updated suite passes **39 backend/unit/reliability checks plus two Chromium flows**. It includes confidence-without-support rejection, calibration limitations, clause conflict, offline/serving policy agreement, frozen evaluation integrity, migration startup, manual-mode override of high confidence, real-model development-case review, idempotency races, retries, fencing, queue outages and restart recovery. Development-case regressions are not independent evaluation. Browser checks include review explanations, the robustness table, saved human decisions and mobile overflow.
 
 ```powershell
 # Resets only the dedicated router_test fixture tables, migrates, uses Redis DB15.
