@@ -31,3 +31,19 @@ jobs:
         working-directory: frontend
       - run: npm run build
         working-directory: frontend
+
+      - name: Build deployable model image
+        run: docker build --tag relay:ci .
+      - name: Exercise hosted API, dispatcher and Linux worker
+        env:
+          DEMO_MODE: "true"
+          AUTO_ROUTING_ENABLED: "false"
+        run: |
+          docker run --detach --name relay-smoke --network host --memory 512m -e DATABASE_URL -e REDIS_URL -e DEMO_MODE -e AUTO_ROUTING_ENABLED -e PORT=8000 relay:ci python -m app.hosted
+          uv run python scripts/smoke_hosted.py
+      - name: Hosted runtime logs
+        if: always()
+        run: docker logs relay-smoke 2>&1 || true
+      - name: Stop hosted smoke instance
+        if: always()
+        run: docker rm -f relay-smoke || true

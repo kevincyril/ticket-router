@@ -1,0 +1,11 @@
+{
+  "sha256": "1a8bbf1d347d85dcf10a9420938a7ebb59b017c8833ed390c59eeb367f2dffd7",
+  "model_version": "robust-378279f9c844-56b3746d",
+  "files": {
+    "metadata.json": "88dddd00add33779473837b57e2760efdb1f89faf7237c774c2c434657584632",
+    "model.joblib": "378279f9c8443c176f002bc797ee61c188756a1180a506b1bc42a0a6d32b8052",
+    "support.joblib": "67e261ec31b7977d5a023c85f2f2809f173f9914cc17546c5f19f947d77a1d39"
+  },
+  "source": "Already-trained frozen model; no training/download occurs at image build or runtime.",
+  "data_attribution": "Bitext, CDLA-Sharing-1.0; see docs/DATASET.md and docs/DATA_LICENSE.txt."
+}

@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: relay-ticket-demo
+    runtime: docker
+    plan: free
+    region: oregon
+    repo: https://github.com/kevincyril/ticket-router
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerCommand: python -m app.hosted
+    healthCheckPath: /api/health/ready
+    autoDeployTrigger: "off"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: relay-ticket-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: relay-ticket-queue
+          type: keyvalue
+          property: connectionString
+      - key: DEMO_MODE
+        value: "true"
+      - key: AUTO_ROUTING_ENABLED
+        value: "false"
+      - key: MODEL_DIR
+        value: artifacts/robustness/deployed
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: OPENBLAS_NUM_THREADS
+        value: "1"
+      - key: DEMO_TICKET_LIMIT
+        value: "500"
+  - type: keyvalue
+    name: relay-ticket-queue
+    plan: free
+    region: oregon
+    ipAllowList: []
+    maxmemoryPolicy: noeviction
+
+databases:
+  - name: relay-ticket-db
+    plan: free
+    region: oregon
+    databaseName: relay
+    user: relay
+    ipAllowList: []

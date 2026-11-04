@@ -18,4 +18,4 @@ with psycopg.connect((base+'/router_test').replace('postgresql+psycopg','postgre
 subprocess.run([str(Path('.venv/Scripts/python.exe')),'-m','alembic','upgrade','head'],check=True)
 # Isolate Redis fixtures from application jobs.
 os.environ['REDIS_URL']=os.environ['REDIS_URL'].rsplit('/',1)[0]+'/15'
-raise SystemExit(subprocess.call([str(Path('.venv/Scripts/python.exe')),'-m','pytest','-m','not browser','-q']))
+raise SystemExit(subprocess.call([str(Path('.venv/Scripts/python.exe')),'-m','pytest','--basetemp','.local/pytest-temp','-m','not browser','-q']))

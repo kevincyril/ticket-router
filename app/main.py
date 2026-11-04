@@ -108,6 +108,8 @@ def ready():
 
 @app.post("/api/tickets", status_code=202)
 def submit(body: Submission, idempotency_key: str = Header(min_length=1, max_length=128)):
+    if settings().demo_mode and body.text not in demo_examples():
+        raise HTTPException(422,"Public demo accepts only its supplied synthetic examples")
     digest = hashlib.sha256(body.text.encode()).hexdigest()
     with Session() as db:
         previous = db.scalar(select(Ticket).where(Ticket.idempotency_key == idempotency_key))
@@ -115,6 +117,17 @@ def submit(body: Submission, idempotency_key: str = Header(min_length=1, max_len
             if previous.request_hash != digest:
                 raise HTTPException(409, "Idempotency key was already used with different text")
             return serialize(previous)
+        if settings().demo_mode:
+            # Serialize only the tiny public sandbox's quota check.
+            db.execute(sqltext("SELECT pg_advisory_xact_lock(742019)"))
+            # Recheck after a concurrent first submission releases the quota lock.
+            previous=db.scalar(select(Ticket).where(Ticket.idempotency_key==idempotency_key))
+            if previous:
+                if previous.request_hash!=digest:
+                    raise HTTPException(409,"Idempotency key conflict")
+                return serialize(previous)
+            if db.scalar(select(func.count()).select_from(Ticket))>=settings().demo_ticket_limit:
+                raise HTTPException(429,"Demo ticket limit reached; existing tickets and evaluation remain available")
         ticket = Ticket(id=str(uuid.uuid4()), idempotency_key=idempotency_key, request_hash=digest, text=body.text)
         db.add(ticket)
         try:
@@ -154,6 +167,10 @@ def ticket(ticket_id: str):
 
 @app.post("/api/tickets/{ticket_id}/review")
 def review(ticket_id: str, body: Decision):
+    if settings().demo_mode:
+        if body.note:
+            raise HTTPException(422,"Public demo does not accept free-text review notes")
+        body.reviewer="Demo visitor"
     rules = routing()
     if body.category not in rules:
         raise HTTPException(422, "Unknown category")
@@ -169,12 +186,16 @@ def review(ticket_id: str, body: Decision):
         return serialize(item)
 
 
+def demo_examples():
+    return json.loads(Path("config/demo_examples.json").read_text(encoding="utf-8-sig"))
+
+
 @app.get("/api/model")
 def model():
     path = Path(settings().model_dir)
     if not (path / "metadata.json").exists():
         raise HTTPException(503, "Train a model first")
-    return {"metadata": json.loads((path / "metadata.json").read_text(encoding='utf-8-sig')), "routing": routing(), "automatic_routing_enabled": settings().auto_routing_enabled}
+    return {"metadata": json.loads((path / "metadata.json").read_text(encoding='utf-8-sig')), "routing": routing(), "automatic_routing_enabled": settings().auto_routing_enabled, "demo_mode": settings().demo_mode, "demo_examples": demo_examples() if settings().demo_mode else []}
 
 
 @app.get("/api/evaluation")

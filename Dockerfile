@@ -16,8 +16,12 @@ COPY migrations/ migrations/
 COPY alembic.ini ./
 COPY config/ config/
 COPY artifacts/ artifacts/
+COPY deploy/serving-model.tar.gz deploy/serving-model.tar.json deploy/
+COPY scripts/model_bundle.py scripts/model_bundle.py
+COPY docs/DATA_LICENSE.txt docs/DATASET.md docs/
+RUN python scripts/model_bundle.py unpack
 COPY --from=ui /ui/dist frontend/dist
-ENV PATH="/service/.venv/bin:$PATH" PYTHONUNBUFFERED=1
+ENV PATH="/service/.venv/bin:$PATH" PYTHONUNBUFFERED=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
 RUN useradd --uid 10001 --create-home router && chown -R router:router /service
 USER router
 EXPOSE 8000

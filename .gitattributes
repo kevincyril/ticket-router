@@ -3,3 +3,5 @@
 data/challenge/** -text
 artifacts/** -text
 docs/DATA_LICENSE.txt -text
+
+deploy/** -text

@@ -265,3 +265,45 @@ def test_real_development_cases_are_reviewed(client,monkeypatch,text):
     assert result['status']=='review' and result['assigned_team'] is None
     assert result['model_version'].startswith('robust-')
     assert 'automatic_routing_disabled' in result['routing_evidence']['review_reasons']
+
+@pytest.mark.integration
+def test_public_demo_only_accepts_synthetic_examples(client,monkeypatch):
+    from app.main import demo_examples
+    monkeypatch.setattr(settings(),'demo_mode',True)
+    assert submit(client,'Do not accept arbitrary private visitor content').status_code==422
+    assert submit(client,demo_examples()[0]).status_code==202
+
+
+@pytest.mark.integration
+def test_public_demo_bounds_storage_and_preserves_idempotency(client,monkeypatch):
+    from app.main import demo_examples
+    monkeypatch.setattr(settings(),'demo_mode',True)
+    monkeypatch.setattr(settings(),'demo_ticket_limit',1)
+    first=submit(client,demo_examples()[0],key='quota').json()
+    assert submit(client,demo_examples()[0],key='quota').json()['id']==first['id']
+    assert submit(client,demo_examples()[1]).status_code==429
+
+
+@pytest.mark.integration
+def test_public_demo_does_not_store_review_free_text(client,fake_model,monkeypatch):
+    from app.main import demo_examples
+    monkeypatch.setattr(settings(),'demo_mode',True)
+    monkeypatch.setattr(settings(),'auto_routing_enabled',False)
+    ticket=submit(client,demo_examples()[1]).json()
+    jobs.process_ticket(ticket['id'],0)
+    path='/api/tickets/'+ticket['id']+'/review'
+    assert client.post(path,json={'category':'PAYMENT','reviewer':'Someone','note':'Private text'}).status_code==422
+    assert client.post(path,json={'category':'PAYMENT','reviewer':'Someone','note':''}).status_code==200
+    result=client.get('/api/tickets/'+ticket['id']).json()
+    assert result['review']['reviewer']=='Demo visitor' and result['review']['note']==''
+
+@pytest.mark.integration
+def test_public_demo_concurrent_replays_respect_quota(client,monkeypatch):
+    from concurrent.futures import ThreadPoolExecutor
+    from app.main import demo_examples
+    monkeypatch.setattr(settings(),'demo_mode',True)
+    monkeypatch.setattr(settings(),'demo_ticket_limit',1)
+    with ThreadPoolExecutor(8) as executor:
+        replies=list(executor.map(lambda _:submit(client,demo_examples()[0],key='demo-race'),range(8)))
+    assert all(reply.status_code==202 for reply in replies)
+    assert len({reply.json()['id'] for reply in replies})==1

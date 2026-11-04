@@ -1,4 +1,4 @@
-﻿# Relay: support-ticket classification and human review
+# Relay: support-ticket classification and human review
 
 A local portfolio service with FastAPI, Pydantic, SQLAlchemy/PostgreSQL, Redis/RQ workers, reproducible scikit-learn and PyTorch/Hugging Face training, and a React/TypeScript dashboard.
 
@@ -69,6 +69,12 @@ The current serving bundle is `artifacts/robustness/deployed`. `.env` and Compos
 
 The data preparation/training settings, versions, split manifests, environment, hardware and commands are saved alongside reports. Binary model/support artifacts are present locally but Git-ignored; a fresh checkout must train/package them before serving. The transformer stays an offline comparison; the serving runtime does not need PyTorch.
 
+## Free hosted demo
+
+`render.yaml` defines a free-only Render preview: one Docker web instance supervising API/dispatcher/worker, plus free managed PostgreSQL and Redis-compatible Key Value. Hosting requires connecting Render and granting access to this private repository; a prepared configuration is not a live deployment. The public sandbox accepts only supplied synthetic examples, disables free-text review notes and caps storage at500 tickets. Mandatory review remains enabled. See [the concrete deployment setup](docs/DEPLOYMENT.md), including idle sleep and the free database's30-day expiration.
+
+The committed ~2.3MB bundle in `deploy/` contains only the already-trained serving model/support artifacts and a checksum manifest. It is extracted and verified during image build; no training or large checkpoint download happens in deployment.
+
 ## Build and launch elsewhere
 
 Build the UI:
@@ -103,6 +109,6 @@ $env:BROWSER_BASE_URL='http://127.0.0.1:8000'
 .venv\Scripts\python -m pytest tests/test_browser.py -q
 ```
 
-CI runs `uv sync --frozen`, migrations, the deterministic test suite and TypeScript/Vite build with real PostgreSQL/Redis services. Locally trained-artifact tests skip if the artifacts are absent; CI never downloads large checkpoints or retrains. The existing source benchmark and40-ticket queue benchmark are historical in `docs/RESULTS.md`. Current candidate inference/evidence checking measured2.48ms median /6.47ms p95 on88 inputs, excluding HTTP/queue/database time.
+CI runs `uv sync --frozen`, migrations, the deterministic test suite and TypeScript/Vite build with real PostgreSQL/Redis services, then builds and smoke-tests the hosted Docker image with the packaged model under a512MB limit. Locally trained-artifact tests skip if the artifacts are absent; CI never downloads large checkpoints or retrains. The existing source benchmark and40-ticket queue benchmark are historical in `docs/RESULTS.md`. Current candidate inference/evidence checking measured2.48ms median /6.47ms p95 on88 inputs, excluding HTTP/queue/database time.
 
 Remaining work before restoring useful automatic routing is representative labeled data, explicit ambiguity/scope handling, independent annotation and a new untouched test. The current model still misclassifies some clear requests and can be confidently wrong; human review is a safety mechanism, not proof the classifier is fixed.
